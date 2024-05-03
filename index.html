@@ -3,7 +3,6 @@
 <head>
     <title>Rei Meguro</title>
     <link rel="stylesheet" href="index.css">
-    <script src="index.js"></script>
     <script src="https://kit.fontawesome.com/02b877242b.js" crossorigin="anonymous"></script>
 
     <meta charset="UTF-8">
@@ -12,7 +11,7 @@
 </head>
 
 
-<body onload="init_fade();">
+<body>
     <!--Navbar-->
     <nav class="navbar">
         <a href="https://github.com/Orbital-Web" target="_blank"><i class="fa-brands fa-square-github"></i></a>
@@ -100,11 +99,47 @@
 
     <!--Projects-->
     <section class="projects">
-        <p class="text-size-2 text-weight-2 text-light">My Recent Projects</p>
-        <!--TODO: project cards that grow on scroll-->
+        <p class="fadein text-size-2 text-weight-2 text-light">My Recent Projects</p>
+
+        <!--Project Cards-->
+        <div class="cards">
+            <!--Template-->
+            <div class="card">
+                <img class="card-img" src="./images/project1.gif">
+                <div class="card-text">
+                    <p class="text-size-2 text-weight-2 text-light">Project 1</p>
+                    <p class="text-size-3 text-light-weak">
+                        Description blah blah blah
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img class="card-img" src="./images/project1.gif">
+                <div class="card-text">
+                    <p class="text-size-2 text-weight-2 text-light">Project 2</p>
+                    <p class="text-size-3 text-light-weak">
+                        Description blah blah blah blah blah blah blah blah blah blah blah blah blah
+                        Description blah blah blah blah blah blah blah blah blah blah blah blah blah
+                        Description blah blah blah blah blah blah blah blah blah blah blah blah blah
+                        Description blah blah blah blah blah blah blah blah blah blah blah blah blah
+                        Description blah blah blah blah blah blah blah blah blah blah blah blah blah
+                        Description blah blah blah blah blah blah blah blah blah blah blah blah blah
+                        Description blah blah blah blah blah blah blah blah blah blah blah blah blah
+                        Description blah blah blah blah blah blah blah blah blah blah blah blah blah
+                        Description blah blah blah blah blah blah blah blah blah blah blah blah blah
+                        Description blah blah blah blah blah blah blah blah blah blah blah blah blah
+                        Description blah blah blah blah blah blah blah blah blah blah blah blah blah
+                    </p>
+                </div>
+            </div>
+            <!--Cards-->
+        </div>
     </section>
 
 
     <!--TODO: footer with copyright-->
+    <section class="footer bg-primary">
+    </section>
 </body>
 </html>

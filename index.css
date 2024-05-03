@@ -42,11 +42,14 @@ body {
 .text-weight-2 {font-weight: 800;}
 .text-weight-3 {font-weight: 600;}
 
-.fadein {
-    transition: opacity 1s;
-    opacity: 0;
+@keyframes fade {
+    from {opacity: 0;}
 }
-.fadedin {opacity: 1;}
+.fadein {
+    animation: fade linear both;
+    animation-timeline: view();
+    animation-range: 0vh 20vh;
+}
 
 
 
@@ -199,8 +202,64 @@ section.overview .overview-box .overview-section .text-light-weak {
 section.projects {
     margin-bottom: 5rem;
 
+    text-align: center;
+}
+
+/* Projects: Cards */
+section.projects .cards {
+    padding: 3rem 0 5rem 0;
+
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
+    gap: 3rem;
+}
+
+/* Projects: Card */
+section.projects .cards .card {
+    width: 60%;
+    height: 18rem;
+
+    display: grid;
+    grid-template-columns: 40% 60%;
+    place-items: start start;
+    overflow: hidden;
+
+    box-shadow: 0 0.2rem 1rem 0.2rem rgba(0,0,0,0.2);
+}
+@keyframes scale {
+    0%, 100% {scale: 1;}
+    30%, 70% {scale: 1.05;}
+
+}
+section.projects .cards .card {
+    animation: scale linear both;
+    animation-timeline: view();
+    animation-range: 30vh 70vh;
+}
+section.projects .cards .card img.card-img {
+    width: 100%;
+
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    overflow: hidden;
+}
+section.projects .cards .card div.card-text {
+    margin: 1rem;
+
+    overflow: hidden;
+
+    text-align: left;
+}
+section.projects .cards .card div.card-text p {
+    margin: 1rem 0 0 0;
+}
+/* TODO: different display of cards on mobile */
+
+
+/* Footer */
+section.footer {
+    height: 30rem;
 }

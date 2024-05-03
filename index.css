@@ -48,7 +48,7 @@ body {
 .fadein {
     animation: fade linear both;
     animation-timeline: view();
-    animation-range: 0vh 20vh;
+    animation-range: 0vh 10vh;
 }
 
 

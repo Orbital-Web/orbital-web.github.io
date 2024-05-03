@@ -46,9 +46,9 @@ body {
     from {opacity: 0;}
 }
 .fadein {
-    animation: fade linear both;
-    animation-timeline: view();
-    animation-range: 0vh 10vh;
+    animation: fade linear both !important;
+    animation-timeline: view() !important;
+    animation-range: 0vh 10vh !important;
 }
 
 

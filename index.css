@@ -53,7 +53,8 @@ body {
 /* ----------------------------------- Section Specific ----------------------------------- */
 /* Navibar */
 nav.navbar {
-    padding: 2.5rem 5%;
+    height: 2.5rem;
+    padding: 2.25rem 5%;
 
     display: flex;
     flex-flow: row-reverse nowrap;
@@ -72,7 +73,7 @@ nav.navbar a {
 
 /* Top */
 section.top {
-    height: 30rem;
+    padding: 8rem 0 14rem 0;
 
     display: flex;
     flex-flow: column nowrap;
@@ -83,7 +84,7 @@ section.top {
 }
 @media (max-aspect-ratio: 5/4) {    /* mobile */
     section.top {
-        height: 15rem !important;
+        padding: 2rem 0 8rem 0 !important;
     }
 }
 section.top p {
@@ -93,8 +94,6 @@ section.top p {
 
 /* Description */
 section.desc {
-    height: 35rem;
-
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
@@ -104,7 +103,7 @@ section.desc {
 /* Description: Box */
 section.desc .desc-box {
     width: 45rem;
-    padding-top: 6rem;
+    padding: 6rem 0 10rem 0;
 
     text-align: center;
 }
@@ -120,30 +119,23 @@ section.desc .desc-box p {
 
 /* Overview */
 section.overview {
-    height: 48rem;
-    margin-top: -8rem;
+    margin: -8rem 0 6rem 0;
 
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
 }
-@media (max-aspect-ratio: 5/4) {    /* mobile */
-    section.overview {
-        height: 130rem !important;
-    }
-}
 
 /* Overview: Box */
 section.overview .overview-box {
+    padding-bottom: 3rem; 
     width: 70%;
-    height: 42rem;
 
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-evenly;
-    align-items: center;
-    overflow: hidden;
+    align-items: flex-start;
 
     box-shadow: 0 0.2rem 1rem 0.2rem rgba(0,0,0,0.2);
     border-radius: 2rem;
@@ -154,41 +146,37 @@ section.overview .overview-box {
         height: 125rem !important;
 
         flex-flow: column nowrap !important;
+        align-items: center !important;
     }
 }
 
 /*Overview: Sections */
 section.overview .overview-box .overview-section {
-    width: 90%;         /* mobile */
+    width: 80%;         /* mobile */
     height: 100%;
     margin: 0 0.8rem;   /* desktop */
 
     flex: 1;
 
     text-align: center;
-}
-@media (min-aspect-ratio: 5/4) {    /* desktop */
-    section.overview .overview-box .overview-section {
-        border-right: 1px solid #444;
-    }
-    section.overview .overview-box .overview-section:last-of-type {
-        border-right: none;
-    }
+
+    border-right: 1px solid #444;
 }
 @media (max-aspect-ratio: 5/4) {    /* mobile */
     section.overview .overview-box .overview-section {
+        border-right: none !important;
         border-bottom: 1px solid #444;
     }
-    section.overview .overview-box .overview-section:last-of-type {
-        border-bottom: none;
-    }
+}
+section.overview .overview-box .overview-section:last-of-type {
+    border: none !important;
 }
 section.overview .overview-box .overview-section .icon {
     width: 3rem;
     height: 3rem;
     line-height: 3rem;
+    margin-top: 3rem;
     padding: 1rem;
-    margin-top: 4rem;
     
     text-align: center;
     color: #000;

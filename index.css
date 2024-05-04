@@ -37,6 +37,11 @@ body {
 .text-size-1 {font-size: 3rem;}
 .text-size-2 {font-size: 1.5rem;}
 .text-size-3 {font-size: 1.25rem;}
+@media (max-width: 560px) {    /* mobile */
+    .text-size-1 {font-size: 2rem !important;}
+    .text-size-2 {font-size: 1.2rem !important;}
+    .text-size-3 {font-size: 0.85rem !important;}
+}
 
 .text-weight-1 {font-weight: 1000;}
 .text-weight-2 {font-weight: 800;}
@@ -134,8 +139,9 @@ section.overview {
 section.overview .overview-box {
     width: 70%;
 
-    display: flex;
-    flex-flow: row nowrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
     align-items: stretch;
     overflow: hidden;
 
@@ -145,18 +151,15 @@ section.overview .overview-box {
 @media (max-aspect-ratio: 5/4) {    /* mobile */
     section.overview .overview-box {
         width: 85% !important;
-        height: 125rem !important;
 
-        flex-flow: column nowrap !important;
-        align-items: center !important;
+        grid-template-rows: repeat(3, 1fr) !important;
+        grid-template-columns: none !important;
     }
 }
 
 /*Overview: Sections */
 section.overview .overview-box .overview-section {
     padding: 2rem 0.8rem;
-
-    flex: 1;
 
     text-align: center;
 
@@ -253,7 +256,39 @@ section.projects .cards .card div.card-text {
 section.projects .cards .card div.card-text p {
     margin: 0 0 0.5rem 0;
 }
-/* TODO: different display of cards on mobile */
+
+/* Projects: Card, Mobile/Small Screen */
+@media (max-width: 1480px) {
+    section.projects .cards .card {
+        width: 80vw !important;
+        max-width: 32rem !important;
+        height: 45vw !important;
+        max-height: 18rem !important;
+
+        display: flex !important;
+    }
+
+    section.projects .cards .card:hover img.card-img {
+        transition: all 0.2s linear;
+        scale: 1.1;
+        opacity: 0.2;
+    }
+
+    section.projects .cards .card:hover div.card-text {
+        transition: opacity 0.4s linear;
+        opacity: 1;
+    }
+
+    section.projects .cards .card div.card-text {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        opacity: 0;
+    }
+}
 
 
 /* Footer */

@@ -268,13 +268,15 @@ section.projects .cards .card div.card-text p {
         display: flex !important;
     }
 
-    section.projects .cards .card:hover img.card-img {
+    section.projects .cards .card:hover img.card-img,
+    section.projects .cards .card:active img.card-img {
         transition: all 0.2s linear;
         scale: 1.1;
         opacity: 0.2;
     }
 
-    section.projects .cards .card:hover div.card-text {
+    section.projects .cards .card:hover div.card-text,
+    section.projects .cards .card:active div.card-text {
         transition: opacity 0.4s linear;
         opacity: 1;
     }

@@ -132,13 +132,12 @@ section.overview {
 
 /* Overview: Box */
 section.overview .overview-box {
-    padding-bottom: 3rem; 
     width: 70%;
 
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-evenly;
-    align-items: flex-start;
+    align-items: stretch;
+    overflow: hidden;
 
     box-shadow: 0 0.2rem 1rem 0.2rem rgba(0,0,0,0.2);
     border-radius: 2rem;
@@ -155,9 +154,7 @@ section.overview .overview-box {
 
 /*Overview: Sections */
 section.overview .overview-box .overview-section {
-    width: 80%;         /* mobile */
-    height: 100%;
-    margin: 0 0.8rem;   /* desktop */
+    padding: 2rem 0.8rem;
 
     flex: 1;
 
@@ -178,7 +175,7 @@ section.overview .overview-box .overview-section .icon {
     width: 3rem;
     height: 3rem;
     line-height: 3rem;
-    margin-top: 3rem;
+    margin-top: 1rem;
     padding: 1rem;
     
     text-align: center;
@@ -218,8 +215,8 @@ section.projects .cards {
 
 /* Projects: Card */
 section.projects .cards .card {
-    width: 60%;
-    height: 18rem;
+    width: 60vw;
+    height: 14vw;
 
     display: grid;
     grid-template-columns: 40% 60%;
@@ -247,14 +244,14 @@ section.projects .cards .card img.card-img {
     overflow: hidden;
 }
 section.projects .cards .card div.card-text {
-    margin: 1rem;
+    margin: 0.5rem 1rem;
 
     overflow: hidden;
 
     text-align: left;
 }
 section.projects .cards .card div.card-text p {
-    margin: 1rem 0 0 0;
+    margin: 0 0 0.5rem 0;
 }
 /* TODO: different display of cards on mobile */
 

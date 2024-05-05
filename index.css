@@ -99,6 +99,18 @@ section.top p {
     margin: 0.5rem;
 }
 
+/* Top: Image */
+section.top .prof-img {
+    width: 15rem;
+    height: 15rem;
+    margin-top: 5rem;
+
+    object-fit: cover;
+
+    box-shadow: 0 0.2rem 1rem 0.2rem var(--primary);
+    border-radius: 50%;
+}
+
 
 /* Description */
 section.desc {
@@ -234,7 +246,7 @@ section.projects .cards .card {
 section.projects .cards .card {
     animation: scale linear both;
     animation-timeline: view();
-    animation-range: 30vh 70vh;
+    animation-range: 30vh 100vh;
 }
 section.projects .cards .card img.card-img {
     width: 100%;

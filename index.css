@@ -34,13 +34,13 @@ body {
 .text-dark-weak {color: #333;}
 .text-dark {color: #000;}
 
-.text-size-1 {font-size: 3rem;}
-.text-size-2 {font-size: 1.5rem;}
-.text-size-3 {font-size: 1.25rem;}
-@media (max-width: 560px) {    /* mobile */
-    .text-size-1 {font-size: 2rem !important;}
-    .text-size-2 {font-size: 1.2rem !important;}
-    .text-size-3 {font-size: 0.85rem !important;}
+.text-size-1 {font-size: clamp(1.92rem, 3.6vw, 3.00rem);}
+.text-size-2 {font-size: clamp(0.96rem, 1.8vw, 1.50rem);}
+.text-size-3 {font-size: clamp(0.80rem, 1.5vw, 1.25rem);}
+@media (max-aspect-ratio: 5/4) {    /* mobile */
+    .text-size-1 {font-size: clamp(1.92rem, 7.2vw, 3.00rem) !important;}
+    .text-size-2 {font-size: clamp(0.96rem, 3.6vw, 1.50rem) !important;}
+    .text-size-3 {font-size: clamp(0.80rem, 3.0vw, 1.25rem) !important;}
 }
 
 .text-weight-1 {font-weight: 1000;}
@@ -229,8 +229,8 @@ section.projects .cards {
 
 /* Projects: Card */
 section.projects .cards .card {
-    width: 60vw;
-    height: 14vw;
+    width: 70vw;
+    aspect-ratio: 40/9;
 
     display: grid;
     grid-template-columns: 40% 60%;
@@ -254,6 +254,7 @@ section.projects .cards .card img.card-img {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+    object-fit: cover;
     overflow: hidden;
 }
 section.projects .cards .card div.card-text {
@@ -268,12 +269,11 @@ section.projects .cards .card div.card-text p {
 }
 
 /* Projects: Card, Mobile/Small Screen */
-@media (max-width: 1480px) {
+@media (max-aspect-ratio: 5/4) {    /* mobile */
     section.projects .cards .card {
         width: 80vw !important;
         max-width: 32rem !important;
-        height: 45vw !important;
-        max-height: 18rem !important;
+        aspect-ratio: 16/9 !important;
 
         display: flex !important;
     }
@@ -288,10 +288,7 @@ section.projects .cards .card div.card-text p {
     }
     section.projects .cards .card div.card-text {
         position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        inset: 0;
         z-index: 1;
         opacity: 0;
     }

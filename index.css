@@ -271,8 +271,7 @@ section.projects .cards .card div.card-text p {
 /* Projects: Card, Mobile/Small Screen */
 @media (max-aspect-ratio: 5/4) {    /* mobile */
     section.projects .cards .card {
-        width: 80vw !important;
-        max-width: 32rem !important;
+        width: min(80vw, 32rem) !important;
         aspect-ratio: 16/9 !important;
 
         display: flex !important;

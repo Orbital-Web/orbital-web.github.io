@@ -215,6 +215,10 @@ section.projects {
 
     text-align: center;
 }
+section.projects .text-light,
+section.projects .text-light-weak {
+    margin: 0.5rem 0;
+}
 
 /* Projects: Cards */
 section.projects .cards {
@@ -237,11 +241,13 @@ section.projects .cards .card {
     place-items: start start;
     overflow: hidden;
 
+    text-decoration: none;
+
     box-shadow: 0 0.2rem 1rem 0.2rem rgba(0,0,0,0.2);
 }
 @keyframes scale {
     0%, 100% {scale: 1;}
-    30%, 70% {scale: 1.05;}
+    30%, 70% {scale: 1.1;}
 }
 section.projects .cards .card {
     animation: scale linear both;
@@ -279,7 +285,7 @@ section.projects .cards .card div.card-text p {
     section.projects .cards .card:hover img.card-img {
         transition: all 0.2s linear;
         scale: 1.1;
-        opacity: 0.2;
+        opacity: 0.25;
     }
     section.projects .cards .card:hover div.card-text {
         transition: opacity 0.4s linear;
@@ -293,7 +299,7 @@ section.projects .cards .card div.card-text p {
     }
     @media (hover: none) {
         section.projects .cards .card img.card-img {
-            opacity: 0.2 !important;
+            opacity: 0.25 !important;
         }
         section.projects .cards .card div.card-text {
             opacity: 1 !important;

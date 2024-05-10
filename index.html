@@ -103,35 +103,102 @@
     <!--Projects-->
     <section class="projects">
         <p class="fadein text-size-2 text-weight-2 text-light">My Recent Projects</p>
+        <p class="fadein text-size-3 text-light-weak">Click on the cards to visit project links</p>
 
         <!--Project Cards-->
         <div class="cards">
             <!--Template-->
-            <div class="card">
-                <img class="card-img" src="./images/project1.gif">
-                <div class="card-text">
-                    <p class="text-size-2 text-weight-2 text-light">Project 1</p>
-                    <p class="text-size-3 text-light-weak">
-                        Description blah blah blah
-                    </p>
-                </div>
-            </div>
-
-            <div class="card">
-                <img class="card-img" src="./images/project1.gif">
+            <!-- <a class="card" href="" target="_blank">
+                <img class="card-img" src="./images/placeholder.gif">
                 <div class="card-text">
                     <p class="text-size-2 text-weight-2 text-light">Project 2</p>
                     <p class="text-size-3 text-light-weak">
-                        Description blah blah blah blah blah blah blah blah blah blah blah blah blah
-                        Description blah blah blah blah blah blah blah blah blah blah blah blah blah
-                        Description blah blah blah blah blah blah blah blah blah blah blah blah blah
-                        Description blah blah blah blah blah blah blah blah blah blah blah blah blah
-                        Description blah blah blah blah blah blah blah blah blah blah blah blah blah
-                        Descriptio
+                        Description blah blah blah blah blah blah blah blah blah blah blah
+                        blah blah Description blah blah blah blah blah blah blah blah blah
+                        blah blah blah blah Description blah blah blah blah blah blah blah
+                        blah blah blah blah blah blah Description blah blah blah blah blah
+                        blah blah blah blah blah blah blah blah Description blah blah blah
+                        blah blah blah blah blah blah blah blah blah blah Description
                     </p>
                 </div>
-            </div>
+            </a> -->
+
             <!--Cards-->
+            <a class="card" href="https://github.com/Orbital-Web/Raphael" target="_blank">  <!--Raphael-->
+                <img class="card-img" src="./images/Raphael.gif">
+                <div class="card-text">
+                    <p class="text-size-2 text-weight-2 text-light">Raphael</p>
+                    <p class="text-size-3 text-light-weak">
+                        Raphael is a chess engine I made in C++ & SFML, and it is capable
+                        of playing at a similar or even higher level to most high level
+                        players, and even other publicly available chess engines. It uses
+                        the recursive negamax algorithm, along with a custom heuristics and
+                        several optimzations including transposition tables, iterative deepening,
+                        SEE pruning, and even pondering. It is my best and most well-documented
+                        personal project. 
+                    </p>
+                </div>
+            </a>
+
+            <a class="card" href="https://www.conversecart.com" target="_blank">  <!--Converse Cart-->
+                <img class="card-img" src="./images/Converse-Cart.gif">
+                <div class="card-text">
+                    <p class="text-size-2 text-weight-2 text-light">Converse Cart Search Engine</p>
+                    <p class="text-size-3 text-light-weak">
+                        I worked with the startup Converse Cart to build an AI-powered search engine
+                        by leveraging word embeddings, bag-of-words models, and cross encoders. It
+                        uses a 3-step approach, where it first retrieves a bunch of candidate products
+                        using a vector search on the query and product embeddings, then uses a cross 
+                        encoder to rerank the products by relevancy, and a personalizer to boost certain
+                        product relevancies. It also caches results to boost speed.
+                    </p>
+                </div>
+            </a>
+
+            <a class="card" href="https://github.com/roahmlab/rtd-code-python" target="_blank">  <!--RTD-->
+                <img class="card-img" src="./images/rtd.gif">
+                <div class="card-text">
+                    <p class="text-size-2 text-weight-2 text-light">RTD Toolkit</p>
+                    <p class="text-size-3 text-light-weak">
+                        RTD is a method developed at the University of Michigan for doing real time motion
+                        planning of robots, and it considers the uncertainties of measurements and the robot
+                        & environment states in real time to generate a provably-safe robot trajectory. I 
+                        worked with their team to generalize this approach for all kinds of grounded robots
+                        to implement a Python toolkit for defining custom robots and for using RTD to do
+                        motion planning with it.
+                    </p>
+                </div>
+            </a>
+
+            <a class="card" href="https://github.com/Orbital-Web/MandelbrotExplorer" target="_blank">  <!--Mandelbrot-->
+                <img class="card-img" src="./images/Mandelbrot.gif">
+                <div class="card-text">
+                    <p class="text-size-2 text-weight-2 text-light">Mandelbrot Fractal Explorer</p>
+                    <p class="text-size-3 text-light-weak">
+                        This is a Mandelbrot Fractal Explorer I built in C++ & SFML. It uses thread
+                        pools to calculate the pixel colors concurrently, and is able to achieve zoom
+                        levels of 10^-16 before floating point precision comes into effect. It also
+                        implements a few other optimizations such as cardoid and periodicity checking
+                        to skip known regions that are in the Mandelbrot set. 
+                    </p>
+                </div>
+            </a>
+
+            <a class="card" href="https://www.jsaumich.org/src/index.html" target="_blank">  <!--JSA-->
+                <img class="card-img" src="./images/JSA.png">
+                <div class="card-text">
+                    <p class="text-size-2 text-weight-2 text-light">JSA Website</p>
+                    <p class="text-size-3 text-light-weak">
+                        I overhauled our website for the Japan Student Association (JSA) @ The University
+                        of Michigan, mainly by moving the website to GitHub Pages for free hosting, and
+                        by rewriting some of the hard-coded page elements to pull dynamically from a JSON
+                        file so that non-CS majors could still update the website with ease. This solved
+                        the problem of the website not being updated for months due to people not knowing
+                        how, and allowed us to advertise our events. 
+                    </p>
+                </div>
+            </a>
+
         </div>
     </section>
 

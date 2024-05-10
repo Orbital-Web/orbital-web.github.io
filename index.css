@@ -239,6 +239,7 @@ section.projects .cards .card {
     display: grid;
     grid-template-columns: 40% 60%;
     place-items: start start;
+    align-items: center;
     overflow: hidden;
 
     text-decoration: none;
@@ -257,9 +258,6 @@ section.projects .cards .card {
 section.projects .cards .card img.card-img {
     width: 100%;
 
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
     object-fit: cover;
     overflow: hidden;
 }

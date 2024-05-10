@@ -1,6 +1,8 @@
-body {
-    margin: 0;
+html {
+    scroll-behavior: smooth;
+}
 
+body {
     --base: #292929;
     --primary: #7F39FB;
     --primary-variant: #03DAC6;
@@ -8,14 +10,15 @@ body {
 }
 
 body {
-    background-color: var(--base);
+    margin: 0;
     font-family: "eurostile", sans-serif;
+    background-color: var(--base);
 }
 
 ::-webkit-scrollbar {width: 10px;}
-::-webkit-scrollbar-track {background: #222;}
-::-webkit-scrollbar-thumb {background: #555;}
-::-webkit-scrollbar-thumb:hover {background: #444;}
+::-webkit-scrollbar-track {background-color: #222;}
+::-webkit-scrollbar-thumb {background-color: #555;}
+::-webkit-scrollbar-thumb:hover {background-color: #444;}
 
 
 
@@ -61,21 +64,34 @@ body {
 /* ----------------------------------- Section Specific ----------------------------------- */
 /* Navibar */
 nav.navbar {
+    width: 100%;
     height: 2.5rem;
-    padding: 2.25rem 5%;
+    padding: 2.25rem 0 1rem 0;
+    margin-right: -5%;
 
     display: flex;
-    flex-flow: row-reverse nowrap;
-    justify-content: flex-start;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
     align-items: center;
-    gap: 1rem;
-
-    font-size: 2.5rem;
-    color: var(--primary-variant);
-    text-decoration: none;
+    position: fixed;
+    gap: 2rem;
+    inset: 0;
+    z-index: 5;
 }
 nav.navbar a {
-    color: inherit;
+    padding: 0.5rem 2rem;
+
+    color: #fff;
+    text-decoration: none;
+
+    border-radius: 0.5rem;
+}
+nav.navbar a:hover {
+    background-color: var(--primary);
+    transition: background 0.5s;
+}
+nav.navbar a:last-child {
+    margin-right: 5rem;
 }
 
 
@@ -309,5 +325,23 @@ section.projects .cards .card div.card-text p {
 
 /* Footer */
 section.footer {
-    height: 30rem;
+    padding: 10rem 0 5rem 0;
+    
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+section.footer .contacts {
+    margin: 1rem 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+section.footer .contacts a {
+    font-size: 2.5rem;
+    color: #fff;
+    text-decoration: none;
 }

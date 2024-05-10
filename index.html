@@ -13,15 +13,16 @@
 
 <body>
     <!--Navbar-->
-    <nav class="navbar">
-        <a href="https://github.com/Orbital-Web" target="_blank"><i class="fa-brands fa-square-github"></i></a>
-        <a href="https://www.linkedin.com/in/rei-meguro/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="mailto:rmeguro@umich.edu"><i class="fa-solid fa-square-envelope"></i></a>
+    <nav class="navbar bg-base">
+        <a href="#home" class="text-size-2">Home</a>
+        <a href="#about" class="text-size-2">About</a>
+        <a href="#projects" class="text-size-2">Projects</a>
+        <a href="#contact" class="text-size-2">Contact</a>
     </nav>
 
 
     <!--Top-->
-    <section class="top">
+    <section class="top" id="home">
         <p class="text-size-1 text-weight-1 text-light">Rei Meguro</p>
         <p class="text-size-2 text-light-weak">I work with Machine Learning, Computer Graphics & Robots.</p>
         <img class="prof-img" src="./images/profile.jpg">
@@ -30,7 +31,7 @@
 
 
     <!--Description-->
-    <section class="desc bg-primary">
+    <section class="desc bg-primary" id="about">
         <!--Description Box-->
         <div class="desc-box">
             <p class="fadein text-size-2 text-weight-2 text-light">About Me</p>
@@ -101,24 +102,19 @@
 
 
     <!--Projects-->
-    <section class="projects">
+    <section class="projects" id="projects">
         <p class="fadein text-size-2 text-weight-2 text-light">My Recent Projects</p>
         <p class="fadein text-size-3 text-light-weak">Click on the cards to visit project links</p>
 
         <!--Project Cards-->
         <div class="cards">
             <!--Template-->
-            <!-- <a class="card" href="" target="_blank">
+            <!-- <a class="card" href="LINK" target="_blank">
                 <img class="card-img" src="./images/placeholder.gif">
                 <div class="card-text">
-                    <p class="text-size-2 text-weight-2 text-light">Project 2</p>
+                    <p class="text-size-2 text-weight-2 text-light">TITLE</p>
                     <p class="text-size-3 text-light-weak">
-                        Description blah blah blah blah blah blah blah blah blah blah blah
-                        blah blah Description blah blah blah blah blah blah blah blah blah
-                        blah blah blah blah Description blah blah blah blah blah blah blah
-                        blah blah blah blah blah blah Description blah blah blah blah blah
-                        blah blah blah blah blah blah blah blah Description blah blah blah
-                        blah blah blah blah blah blah blah blah blah blah Description
+                        DESCRIPTION
                     </p>
                 </div>
             </a> -->
@@ -203,8 +199,14 @@
     </section>
 
 
-    <!--TODO: footer with copyright-->
-    <section class="footer bg-primary">
+    <!--Footer-->
+    <section class="footer bg-primary" id="contact">
+        <div class="contacts">
+            <a href="mailto:rmeguro@umich.edu"><i class="fa-solid fa-square-envelope"></i></a>
+            <a href="https://github.com/Orbital-Web" target="_blank"><i class="fa-brands fa-square-github"></i></a>
+            <a href="https://www.linkedin.com/in/rei-meguro/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <p class="text-size-3 text-light-weak">Copyright © 2024 Rei Meguro</p>
     </section>
 </body>
 </html>

@@ -5,7 +5,7 @@ function mobile_scroll() {
         !window.matchMedia("(hover: none)").matches
     ) return
 
-    var FADE_START = 0.4;
+    var FADE_START = 0.3;
     var FADE_TILL = 0.6;
     var KEEP_TILL = 0.8;
 

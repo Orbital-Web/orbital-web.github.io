@@ -348,12 +348,12 @@ section.projects .cards .card div.card-text p {
         opacity: 0;
     }
     @media (hover: none) {
-        section.projects .cards .card img.card-img {
+        /* section.projects .cards .card img.card-img {
             opacity: 0.25 !important;
-        }
-        section.projects .cards .card div.card-text {
+        } */
+        /* section.projects .cards .card div.card-text {
             opacity: 1 !important;
-        }
+        } */
     }
 
 }

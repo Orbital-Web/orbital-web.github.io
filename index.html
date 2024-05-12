@@ -12,13 +12,13 @@
 </head>
 
 
-<body>
+<body onload="update_copyright();">
     <!--Navbar-->
     <nav class="navbar bg-base">
         <!--Mobile only burger-->
         <input type="checkbox" id="burger" class="burger text-size-2"></input>
         <label for="burger" class="burger"><i class="fa-solid fa-bars"></i></label>
-
+        <!--Navigation links-->
         <div class="navs bg-base">
             <a href="#home" class="text-size-2">Home</a>
             <a href="#about" class="text-size-2">About</a>
@@ -33,7 +33,6 @@
         <p class="text-size-1 text-weight-1 text-light">Rei Meguro</p>
         <p class="text-size-2 text-light-weak">I work with Machine Learning, Computer Graphics & Robots.</p>
         <img class="prof-img" src="./images/profile.jpg">
-        <!--TODO: maybe add glow effect-->
     </section>
 
 
@@ -42,7 +41,6 @@
         <!--Description Box-->
         <div class="desc-box">
             <p class="fadein text-size-2 text-weight-2 text-light">About Me</p>
-            <!--TODO: shorten text-->
             <p class="fadein text-size-3 text-light">
                 I'm an ambitious Computer Science student with an affinity for clean & efficient code. I enjoy building
                 rendering engines and neural networks from scratch to learn their inner workings, and I strive to use
@@ -115,18 +113,6 @@
 
         <!--Project Cards-->
         <div class="cards">
-            <!--Template-->
-            <!-- <a class="card" href="LINK" target="_blank">
-                <img class="card-img" src="./images/placeholder.gif">
-                <div class="card-text">
-                    <p class="text-size-2 text-weight-2 text-light">TITLE</p>
-                    <p class="text-size-3 text-light-weak">
-                        DESCRIPTION
-                    </p>
-                </div>
-            </a> -->
-
-            <!--Cards-->
             <a class="card" href="https://github.com/Orbital-Web/Raphael" target="_blank">  <!--Raphael-->
                 <img class="card-img" src="./images/Raphael.gif">
                 <div class="card-text">
@@ -213,7 +199,7 @@
             <a href="https://github.com/Orbital-Web" target="_blank"><i class="fa-brands fa-square-github"></i></a>
             <a href="https://www.linkedin.com/in/rei-meguro/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
         </div>
-        <p class="text-size-3 text-light-weak">Copyright © 2024 Rei Meguro</p>
+        <p class="text-size-3 text-light-weak" id="copyright">Copyright © Rei Meguro</p>
     </section>
 </body>
 </html>

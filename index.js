@@ -1,3 +1,12 @@
+function update_copyright() {
+    let cr = document.getElementById("copyright");
+    let year = new Date().getFullYear();
+    cr.innerHTML = "Copyright © " + year + " Rei Meguro";
+}
+
+
+
+
 function mobile_scroll() {
     let mobile_cards = document.querySelectorAll("section.projects .cards .card");
     if (
@@ -42,4 +51,4 @@ function mobile_scroll() {
     }
 }
 
-window.addEventListener("scroll", mobile_scroll)
+window.addEventListener("scroll", mobile_scroll);

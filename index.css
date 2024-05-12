@@ -114,9 +114,16 @@ nav.navbar .navs a:hover {
         display: inline !important;
     }
     nav.navbar .navs {
+        width: 9rem;
         margin-right: 0rem !important;
 
         display: none;
+    }
+    nav.navbar .navs a {
+        width: 100%;
+        padding-inline: 0;
+
+        text-align: center;
     }
     nav.navbar input.burger:checked ~ .navs {
         display: flex !important;
@@ -347,15 +354,14 @@ section.projects .cards .card div.card-text p {
         z-index: 1;
         opacity: 0;
     }
-    @media (hover: none) {
-        /* section.projects .cards .card img.card-img {
+    /* @media (hover: none) {
+        section.projects .cards .card img.card-img {
             opacity: 0.25 !important;
-        } */
-        /* section.projects .cards .card div.card-text {
+        }
+        section.projects .cards .card div.card-text {
             opacity: 1 !important;
-        } */
-    }
-
+        }
+    } */
 }
 
 

@@ -90,17 +90,19 @@ nav.navbar {
     position: fixed;
     inset: 0;
     z-index: 5;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 nav.navbar input.burger,
 nav.navbar label.burger {
     display: none;
 }
 nav.navbar .navs {
-    margin-right: 5rem;
+    margin-right: 2rem;
 }
 nav.navbar label.burger,
 nav.navbar .navs a {
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 1.5rem;
 
     text-decoration: none;
     cursor: pointer;
@@ -127,7 +129,7 @@ nav.navbar .navs a:hover {
         display: inline !important;
     }
     nav.navbar .navs {
-        width: 9rem;
+        width: 8rem;
         margin-right: 0rem !important;
 
         display: none;
@@ -153,7 +155,7 @@ nav.navbar .navs a:hover {
 
 /* Top */
 section.top {
-    padding: 5rem 0 11rem 0;
+    padding: 7rem 0 11rem 0;
 
     display: flex;
     flex-flow: column nowrap;
@@ -403,4 +405,8 @@ section.footer .contacts {
 section.footer .contacts a {
     font-size: 2.5rem;
     text-decoration: none;
+}
+section.footer .contacts a:hover {
+    scale: 1.1;
+    transition: scale 0.1s ease-out;
 }

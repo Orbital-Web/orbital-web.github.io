@@ -166,7 +166,7 @@ section.top {
 }
 @media (max-aspect-ratio: 5/4) {    /* mobile */
     section.top {
-        padding: 5rem 0 8rem 0 !important;
+        padding: 7rem 0 8rem 0 !important;
     }
 }
 section.top p {

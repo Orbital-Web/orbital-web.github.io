@@ -167,7 +167,13 @@ section.top .prof-img {
     object-fit: cover;
 
     box-shadow: 0 0.2rem 1rem 0.2rem var(--primary);
-    border-radius: 50%;
+    border: 2px solid white;
+    animation: wiggle 12s ease-in-out infinite;
+}
+@keyframes wiggle {
+    0%, 100% {border-radius: 70% 60% 50% 40% / 50% 70% 30% 70%;}
+    33%      {border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;}
+    66%      {border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;}
 }
 
 
@@ -250,7 +256,7 @@ section.overview .overview-box .overview-section .icon {
     line-height: 3rem;
     margin-top: 1rem;
     padding: 1rem;
-    
+
     text-align: center;
     color: #000;
 

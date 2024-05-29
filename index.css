@@ -7,6 +7,11 @@ body {
     --primary: #7F39FB;
     --primary-variant: #03DAC6;
     --secondary: #CF6679;
+
+    --light: #fff;
+    --light-weak: #ccc;
+    --dark-weak: #444;
+    --dark: #000;
 }
 
 body {
@@ -32,10 +37,10 @@ body {
 .text-primary-variant {color: var(--primary-variant);}
 .text-secondary {color: var(--secondary);}
 
-.text-light {color: #fff;}
-.text-light-weak {color: #ccc;}
-.text-dark-weak {color: #333;}
-.text-dark {color: #000;}
+.text-light {color: var(--light);}
+.text-light-weak {color: var(--light-weak);}
+.text-dark-weak {color: var(--dark-weak);}
+.text-dark {color: var(--dark);}
 
 .text-size-1 {font-size: clamp(1.92rem, 3.6vw, 3.00rem);}
 .text-size-2 {font-size: clamp(0.96rem, 1.8vw, 1.50rem);}
@@ -88,7 +93,6 @@ nav.navbar label.burger,
 nav.navbar .navs a {
     padding: 0.5rem 2rem;
 
-    color: #fff;
     text-decoration: none;
     cursor: pointer;
 
@@ -131,7 +135,7 @@ nav.navbar .navs a:hover {
         justify-content: flex-start;
         align-items: center;
 
-        border: 1px solid #fff;
+        border: 1px solid var(--light);
         border-radius: 1rem;
         background-color: var(--base);
     }
@@ -167,7 +171,7 @@ section.top .prof-img {
     object-fit: cover;
 
     box-shadow: 0 0.2rem 1rem 0.2rem var(--primary);
-    border: 2px solid white;
+    border: 2px solid var(--light);
     animation: wiggle 12s ease-in-out infinite;
 }
 @keyframes wiggle {
@@ -239,12 +243,12 @@ section.overview .overview-box .overview-section {
 
     text-align: center;
 
-    border-right: 1px solid #444;
+    border-right: 1px solid var(--dark-weak);
 }
 @media (max-aspect-ratio: 5/4) {    /* mobile */
     section.overview .overview-box .overview-section {
         border-right: none !important;
-        border-bottom: 1px solid #444;
+        border-bottom: 1px solid var(--dark-weak);
     }
 }
 section.overview .overview-box .overview-section:last-of-type {
@@ -258,7 +262,6 @@ section.overview .overview-box .overview-section .icon {
     padding: 1rem;
 
     text-align: center;
-    color: #000;
 
     background-color: var(--primary-variant);
     border-radius: 50%;
@@ -374,7 +377,7 @@ section.projects .cards .card div.card-text p {
 /* Footer */
 section.footer {
     padding: 10rem 0 5rem 0;
-    
+
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-end;
@@ -390,6 +393,5 @@ section.footer .contacts {
 }
 section.footer .contacts a {
     font-size: 2.5rem;
-    color: #fff;
     text-decoration: none;
 }

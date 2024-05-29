@@ -1,17 +1,26 @@
 html {
     scroll-behavior: smooth;
 }
-
 body {
     --base: #292929;
     --primary: #7F39FB;
     --primary-variant: #03DAC6;
     --secondary: #CF6679;
 
-    --light: #fff;
-    --light-weak: #ccc;
-    --dark-weak: #444;
-    --dark: #000;
+    --elem-base: #fff;
+    --elem-base-weak: #ccc;
+    --elem-anti-weak: #444;
+    --elem-anti: #000;
+}
+@media (prefers-color-scheme: light) {
+    body {
+        --base: #fff !important;
+
+        --elem-base: #000 !important;
+        --elem-base-weak: #444 !important;
+        --elem-anti-weak: #ccc !important;
+        --elem-anti: #fff !important;
+    }
 }
 
 body {
@@ -37,10 +46,10 @@ body {
 .text-primary-variant {color: var(--primary-variant);}
 .text-secondary {color: var(--secondary);}
 
-.text-light {color: var(--light);}
-.text-light-weak {color: var(--light-weak);}
-.text-dark-weak {color: var(--dark-weak);}
-.text-dark {color: var(--dark);}
+.text-base {color: var(--elem-base);}
+.text-base-weak {color: var(--elem-base-weak);}
+.text-anti-weak {color: var(--elem-anti-weak);}
+.text-anti {color: var(--elem-anti);}
 
 .text-size-1 {font-size: clamp(1.92rem, 3.6vw, 3.00rem);}
 .text-size-2 {font-size: clamp(0.96rem, 1.8vw, 1.50rem);}
@@ -135,7 +144,7 @@ nav.navbar .navs a:hover {
         justify-content: flex-start;
         align-items: center;
 
-        border: 1px solid var(--light);
+        border: 1px solid var(--elem-base);
         border-radius: 1rem;
         background-color: var(--base);
     }
@@ -171,7 +180,7 @@ section.top .prof-img {
     object-fit: cover;
 
     box-shadow: 0 0.2rem 1rem 0.2rem var(--primary);
-    border: 2px solid var(--light);
+    border: 2px solid #fff;
     animation: wiggle 12s ease-in-out infinite;
 }
 @keyframes wiggle {
@@ -243,12 +252,12 @@ section.overview .overview-box .overview-section {
 
     text-align: center;
 
-    border-right: 1px solid var(--dark-weak);
+    border-right: 1px solid var(--elem-anti-weak);
 }
 @media (max-aspect-ratio: 5/4) {    /* mobile */
     section.overview .overview-box .overview-section {
         border-right: none !important;
-        border-bottom: 1px solid var(--dark-weak);
+        border-bottom: 1px solid var(--elem-anti-weak);
     }
 }
 section.overview .overview-box .overview-section:last-of-type {

@@ -135,13 +135,30 @@
                 <div class="card-text">
                     <p class="text-size-2 text-weight-2 text-base">Raphael</p>
                     <p class="text-size-3 text-base-weak">
-                        Raphael is a chess engine I made in C++ & SFML, and it is capable
-                        of playing at a similar or even higher level to most high level
-                        players, and even other publicly available chess engines. It uses
-                        the recursive negamax algorithm, along with a custom heuristics and
-                        several optimzations including transposition tables, iterative deepening,
-                        SEE pruning, and even pondering. It is my best and most well-documented
-                        personal project.
+                        Raphael is a chess engine I made in C++, and it is accompanied with a
+                        GUI built with SFML. It is capable of easily beating most players and
+                        even some publicly available chess engines. It uses the recursive
+                        negamax function to rapidly explore outcomes of different moves, and it
+                        leverages several optimizations incuding transposition tables, iterative
+                        deepening, SEE pruning, and pondering. It also has a NNUE mode to evaluate
+                        using a neural network, though I am currently in the process of training it
+                        using data from my own evaluation function rather than Stockfish's.
+                    </p>
+                </div>
+            </a>
+
+            <a class="card" href="https://github.com/Orbital-Web/autorob" target="_blank">  <!--Kineval-->
+                <img class="card-img" src="./images/Kineval.gif">
+                <div class="card-text">
+                    <p class="text-size-2 text-weight-2 text-base">Kineval</p>
+                    <p class="text-size-3 text-base-weak">
+                        Kineval is a Python-based interactive learning tool made for EECS 367 at the
+                        University of Michigan and it includes a wide variety of features including
+                        URDF loading, forward kinematics, inverse kinematics, collision detection,
+                        and RRT motion planning. It's written in a manner to allow students to
+                        implement these features themselves while only focusing on the key details (i.e.,
+                        not the rendering, keyboard control, etc.). It is planned to be deployed in
+                        Fall 2026.
                     </p>
                 </div>
             </a>
@@ -179,12 +196,11 @@
                 <div class="card-text">
                     <p class="text-size-2 text-weight-2 text-base">RTD Toolkit</p>
                     <p class="text-size-3 text-base-weak">
-                        RTD is a method developed at the University of Michigan for doing real time motion
-                        planning of robots, and it considers the uncertainties of measurements and the robot
-                        & environment states in real time to generate a provably-safe robot trajectory. I
-                        worked with their team to generalize this approach for all kinds of grounded robots
-                        to implement a Python toolkit for defining custom robots and for using RTD to do
-                        motion planning with it.
+                        RTD is a technique developed at the University of Michigan for making provably safe
+                        motion plans. It accounts for uncertainties in the measurements as well as the robot
+                        movement using polynomial zonotopes to avoid collisions. I worked with ROAHM lab, the
+                        team that developed this technique, to built a Python toolkit for easily implementing
+                        RTD on any grounded robot.
                     </p>
                 </div>
             </a>
@@ -198,9 +214,9 @@
                     <p class="text-size-3 text-base-weak">
                         Plaite is a project my team and I developed in 24 hours during MHacks 2024,
                         and it won us the Best Use of Intel AI award. Plaite is a nutrition tracking
-                        app which uses YOLOv8 for real time food detection to simplify the process.
-                        Plaite also leverages LLMs and a food nutrition API to offer tailored advice
-                        for improving health based on the nutritional trend of the user.
+                        app which uses YOLOv8 for real time food detection to simplify the tracking
+                        process for users. Plaite also leverages LLMs and a food nutrition API to
+                        offer tailored advice on improving health and meeting dietary goals.
                     </p>
                 </div>
             </a>
@@ -226,12 +242,12 @@
                 <div class="card-text">
                     <p class="text-size-2 text-weight-2 text-base">JSA Website</p>
                     <p class="text-size-3 text-base-weak">
-                        I overhauled our website for the Japan Student Association (JSA) @ The University
+                        I overhauled the website for the Japan Student Association (JSA) @ The University
                         of Michigan, mainly by moving the website to GitHub Pages for free hosting, and
                         by rewriting some of the hard-coded page elements to pull dynamically from a JSON
                         file so that non-CS majors could still update the website with ease. This solved
                         the problem of the website not being updated for months due to people not knowing
-                        how, and allowed us to advertise our events.
+                        how, and allowed us to advertise our events to a wider community.
                     </p>
                 </div>
             </a>

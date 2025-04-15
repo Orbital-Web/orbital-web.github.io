@@ -28,7 +28,7 @@ body {
 }
 
 ::-webkit-scrollbar {width: 10px;}
-::-webkit-scrollbar-track {background-color: var(--base);}
+::-webkit-scrollbar-track {background-color: var(--base-alt);}
 ::-webkit-scrollbar-thumb {background-color: #555;}
 ::-webkit-scrollbar-thumb:hover {background-color: #444;}
 
@@ -36,7 +36,7 @@ body {
 
 /* ----------------------------------- Templates ----------------------------------- */
 .bg-base {background-color: var(--base);}
-.bg-base-alt {background-color: var(--base-alt);}
+.bg-alt {background-color: var(--base-alt);}
 .bg-primary {background-color: var(--primary);}
 .bg-secondary {background-color: var(--secondary);}
 
@@ -88,7 +88,7 @@ nav.navbar {
     inset: 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 2.25rem 0 1rem 0;
-    width: 100%;
+    width: 100vw;
     height: 2.5rem;
 }
 nav.navbar a.toggle {
@@ -114,6 +114,7 @@ nav.navbar label.burger {
 }
 nav.navbar .navs {
     margin-right: 8rem;
+    user-select: none;
 }
 nav.navbar label.burger,
 nav.navbar .navs a {
@@ -131,14 +132,14 @@ nav.navbar a.toggle:hover {
 @media (max-aspect-ratio: 5/4) {
     /* Mobile */
     nav.navbar {
-        flex-flow: column nowrap !important;
+        flex-flow: row nowrap !important;
         justify-content: flex-start !important;
         align-items: flex-end !important;
         gap: 1.25rem !important;
     }
     nav.navbar a.toggle {
-        /* FIXME: */
-        display: none;
+        display: inline !important;
+        margin-left: 4rem;
     }
     nav.navbar label.burger {
         display: inline !important;
@@ -146,11 +147,13 @@ nav.navbar a.toggle:hover {
     }
     nav.navbar .navs {
         display: none;
+        position: fixed;
         margin-right: 0rem !important;
+        inset: 5rem 0.6rem auto auto;
         width: 8rem;
+        overflow: hidden;
     }
     nav.navbar .navs a {
-        padding-inline: 0;
         width: 100%;
         text-align: center;
     }
@@ -220,7 +223,7 @@ section.desc .desc-box {
     /* Mobile */
     section.desc .desc-box {
         padding: 2rem 0 9rem 0;
-        width: 90% !important;
+        width: 25rem !important;
     }
 }
 section.desc .desc-box p {
@@ -245,14 +248,14 @@ section.overview .overview-box {
     align-items: stretch;
     box-shadow: 0 0.2rem 1rem 0.2rem rgba(0,0,0,0.2);
     border-radius: 2rem;
-    width: 80%;
+    width: 75rem;
 }
 @media (max-aspect-ratio: 5/4) {
     /* Mobile */
     section.overview .overview-box {
         grid-template-rows: repeat(3, 1fr) !important;
         grid-template-columns: none !important;
-        width: 85% !important;
+        width: 22rem !important;
     }
 }
 
@@ -313,7 +316,6 @@ section.projects .cards {
 section.projects .cards .card {
     display: grid;
     grid-template-columns: 40% 60%;
-    box-shadow: 0 0.2rem 1rem 0.2rem rgba(0,0,0,0.2);
     border-radius: 0.5rem;
     background-color: var(--base-alt);
     width: 70rem;

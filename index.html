@@ -11,26 +11,28 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
 
-    <body onload="update_copyright();">
+    <body onload="onLoad();">
         <!--Navbar-->
         <nav class="navbar bg-base">
+            <!--Light/Dark toggle-->
+            <a id="mode-toggle" class="text-size-3 text-strong toggle"><i class="fa-solid"></i></a>
             <!--Mobile only burger-->
             <input type="checkbox" id="burger" class="burger text-size-2" />
-            <label for="burger" class="burger"><i class="fa-solid fa-bars text-size-2 text-base"></i></label>
+            <label for="burger" class="burger"><i class="fa-solid fa-bars text-size-2 text-strong"></i></label>
             <!--Navigation links-->
             <div class="navs bg-base">
-                <a href="#home" class="text-size-3 text-base text-weight-3">Home</a>
-                <a href="#about" class="text-size-3 text-base text-weight-3">About</a>
-                <a href="#projects" class="text-size-3 text-base text-weight-3">Projects</a>
-                <a href="#contact" class="text-size-3 text-base text-weight-3">Contact</a>
+                <a href="#home" class="text-size-3 text-strong text-weight-3">Home</a>
+                <a href="#about" class="text-size-3 text-strong text-weight-3">About</a>
+                <a href="#projects" class="text-size-3 text-strong text-weight-3">Projects</a>
+                <a href="#contact" class="text-size-3 text-strong text-weight-3">Contact</a>
             </div>
         </nav>
 
         <!--Top-->
         <section class="top" id="home">
-            <p class="text-size-1 text-weight-1 text-base">Rei Meguro</p>
-            <p class="text-size-2 text-base-weak">
-                I work with Full Stack Apps, Computer Vision, and Natural Language Processing.
+            <p class="text-size-1 text-weight-1 text-strong">Rei Meguro</p>
+            <p class="text-size-2 text-base">
+                I work with Full Stack, Computer Vision, and Natural Language Processing.
             </p>
             <img class="prof-img" src="./images/profile.jpg" />
         </section>
@@ -39,13 +41,11 @@
         <section class="desc bg-primary" id="about">
             <!--Description Box-->
             <div class="desc-box">
-                <p class="fadein text-size-2 text-weight-2 text-base">About Me</p>
-                <p class="fadein text-size-3 text-base">
-                    I'm an ambitious Computer Science with an affinity for clean and efficient code. I enjoy working
-                    with all kinds of AI (ML, CV, NLP, RL) and my goal is to automate all the mundane aspects of our
-                    lives and to build versatile assistive technologies so that we can focus on solving the important
-                    problems. I also greatly enjoy understanding the inner working of things and designing my own robust
-                    systems.
+                <p class="fadein text-size-2 text-weight-2 text-white">About Me</p>
+                <p class="fadein text-size-3 text-white">
+                    I'm an ambitious Computer Science student with a passion in automation and designing robust,
+                    efficient systems. I enjoy working with all sorts of AI (ML, CV, NLP, RL), and I aspire to automate
+                    all mundane daily tasks so we can focus on solving the important problems.
                 </p>
             </div>
         </section>
@@ -56,67 +56,56 @@
             <div class="overview-box bg-base">
                 <!--Education-->
                 <div class="overview-section">
-                    <i class="fa-solid fa-graduation-cap icon text-anti"></i>
-                    <p class="fadein text-size-2 text-weight-2 text-base">Education</p>
+                    <i class="fa-solid fa-graduation-cap icon text-black"></i>
+                    <p class="fadein text-size-2 text-weight-2 text-strong">Education</p>
 
-                    <p class="fadein text-size-3 text-base-weak">BSE in Computer Science</p>
-                    <p class="fadein text-size-3 text-base-weak">College of Engineering. University of Michigan</p>
-                    <p class="fadein text-size-3 text-base-weak">Aug 2022 - Mar 2025, GPA: 4.0</p>
+                    <p class="fadein text-size-3 text-base">Cornell University</p>
+                    <p class="fadein text-size-3 text-base">M.E in Computer Science</p>
+                    <p class="fadein text-size-3 text-base">Aug 2025 - Mar 2026</p>
+                    <br />
 
-                    <p class="fadein text-size-3 text-primary">Relevant Classes:</p>
-                    <p class="fadein text-size-3 text-base-weak">Data Structures & Algorithms</p>
-                    <p class="fadein text-size-3 text-base-weak">Operating Systems</p>
-                    <p class="fadein text-size-3 text-base-weak">Machine Learning</p>
-                    <p class="fadein text-size-3 text-base-weak">Computer Vision</p>
-                    <p class="fadein text-size-3 text-base-weak">Natural Language Processing</p>
-                    <p class="fadein text-size-3 text-base-weak">Web Systems</p>
-                    <p class="fadein text-size-3 text-base-weak">Autonomous Robots</p>
+                    <p class="fadein text-size-3 text-base">University of Michigan</p>
+                    <p class="fadein text-size-3 text-base">B.S.E in Computer Science</p>
+                    <p class="fadein text-size-3 text-base">Aug 2022 - Mar 2025, GPA: 4.0</p>
                 </div>
                 <!--Technical Skills-->
                 <div class="overview-section">
-                    <i class="fa-solid fa-code icon text-anti"></i>
-                    <p class="fadein text-size-2 text-weight-2 text-base">Technical Skills</p>
+                    <i class="fa-solid fa-code icon text-black"></i>
+                    <p class="fadein text-size-2 text-weight-2 text-strong">Technical Skills</p>
 
-                    <p class="fadein text-size-3 text-base-weak">C, C++, Python, MATLAB, Julia, JavaScript</p>
-                    <p class="fadein text-size-3 text-base-weak">HTML/CSS, Git, Docker, Flask, PyTorch</p>
-                    <p class="fadein text-size-3 text-base-weak">TensorFlow, SFML, React, Next.js</p>
+                    <p class="fadein text-size-3 text-base">C, C++, Python, JavaScript</p>
+                    <p class="fadein text-size-3 text-base">MATLAB, Julia, HTML/CSS</p>
+                    <br />
 
-                    <p class="fadein text-size-3 text-primary">Awards:</p>
-                    <p class="fadein text-size-3 text-base-weak">4th IEEE ICAIC Conference: Best Paper Award</p>
-                    <p class="fadein text-size-3 text-base-weak">Mapping Thought to Action Hackathon: 1st Place</p>
-                    <p class="fadein text-size-3 text-base-weak">MHacks 2024: Best Use of Intel AI</p>
-                    <p class="fadein text-size-3 text-base-weak">James B. Angell Scholar</p>
-                    <p class="fadein text-size-3 text-base-weak">Branstrom Freshman Prize</p>
-                </div>
-                <!--Experiences-->
-                <div class="overview-section">
-                    <i class="fa-solid fa-dumbbell icon text-anti"></i>
-                    <p class="fadein text-size-2 text-weight-2 text-base">Recent Experiences</p>
+                    <p class="fadein text-size-3 text-base">Git, Docker, React, Next.js, Django, Flask</p>
+                    <p class="fadein text-size-3 text-base">FastAPI, PyTorch TensorFlow, SFML</p>
+                    <br />
 
                     <a
                         class="fadein text-size-3 text-primary"
                         href="https://drive.google.com/file/d/1nb8aBWzEre0WIDC5VPxqoK20qs_bOrR5/view?usp=sharing"
                         target="_blank"
-                        >Resume Link</a
+                        >View Resume</a
                     >
-                    <p class="fadein text-size-3 text-base-weak">
-                        Phising Detection System Research @ United Nations University
-                    </p>
-                    <p class="fadein text-size-3 text-base-weak">Full Stack & Search Engineering @ Folio</p>
-                    <p class="fadein text-size-3 text-base-weak">Search Engine Development @ ConvoSearch</p>
-                    <p class="fadein text-size-3 text-base-weak">Teaching Assistant @ UofM ROB101</p>
-                    <p class="fadein text-size-3 text-base-weak">Vice President @ UofM Japan Student Association</p>
-                    <p class="fadein text-size-3 text-base-weak">
-                        Robot Trajectory Optimzation Toolkit Development @ UofM ROAHM Lab
-                    </p>
+                </div>
+                <!--Experiences-->
+                <div class="overview-section">
+                    <i class="fa-solid fa-award icon text-black"></i>
+                    <p class="fadein text-size-2 text-weight-2 text-strong">Awards</p>
+
+                    <p class="fadein text-size-3 text-base">4th IEEE ICAIC Conference: Best Paper</p>
+                    <p class="fadein text-size-3 text-base">Mapping Thought to Action: 1st Place</p>
+                    <p class="fadein text-size-3 text-base">MHacks 2024: Best Use of Intel AI</p>
+                    <p class="fadein text-size-3 text-base">James B. Angell Scholar</p>
+                    <p class="fadein text-size-3 text-base">Branstrom Freshman Prize</p>
                 </div>
             </div>
         </section>
 
         <!--Projects-->
         <section class="projects" id="projects">
-            <p class="fadein text-size-2 text-weight-2 text-base">My Recent Projects</p>
-            <p class="fadein text-size-3 text-base-weak">Click on the cards to visit project links</p>
+            <p class="fadein text-size-2 text-weight-2 text-strong">My Recent Projects</p>
+            <p class="fadein text-size-3 text-base">Click on the cards to visit project links</p>
 
             <!--Project Cards-->
             <div class="cards">
@@ -124,8 +113,8 @@
                     <!--AdaPhish-->
                     <img class="card-img" src="./images/UNU.gif" />
                     <div class="card-text">
-                        <p class="text-size-2 text-weight-2 text-base">AdaPhish</p>
-                        <p class="text-size-3 text-base-weak">
+                        <p class="text-size-2 text-weight-2 text-strong">AdaPhish</p>
+                        <p class="text-size-3 text-base">
                             AdaPhish is an adaptive phishing detection and submission platform designed to enable secure
                             sharing of phishing emails and provide a robust solution to evolving phishing scams. It is
                             now being tested within the United Nations University, and the paper has been accepted to
@@ -139,8 +128,8 @@
                     <!--Raphael-->
                     <img class="card-img" src="./images/Raphael.gif" />
                     <div class="card-text">
-                        <p class="text-size-2 text-weight-2 text-base">Raphael</p>
-                        <p class="text-size-3 text-base-weak">
+                        <p class="text-size-2 text-weight-2 text-strong">Raphael</p>
+                        <p class="text-size-3 text-base">
                             Raphael is a chess engine I made in C++, and it is accompanied with a GUI built with SFML.
                             It is capable of easily beating most players and even some publicly available chess engines.
                             It uses the recursive negamax function to rapidly explore outcomes of different moves, and
@@ -156,8 +145,8 @@
                     <!--Kineval-->
                     <img class="card-img" src="./images/Kineval.gif" />
                     <div class="card-text">
-                        <p class="text-size-2 text-weight-2 text-base">Kineval</p>
-                        <p class="text-size-3 text-base-weak">
+                        <p class="text-size-2 text-weight-2 text-strong">Kineval</p>
+                        <p class="text-size-3 text-base">
                             Kineval is a Python-based interactive learning tool made for EECS 367 at the University of
                             Michigan and it includes a wide variety of features including URDF loading, forward
                             kinematics, inverse kinematics, collision detection, and RRT motion planning. It's written
@@ -172,8 +161,8 @@
                     <!--Folio-->
                     <img class="card-img" src="./images/Folio.png" />
                     <div class="card-text">
-                        <p class="text-size-2 text-weight-2 text-base">Folio</p>
-                        <p class="text-size-3 text-base-weak">
+                        <p class="text-size-2 text-weight-2 text-strong">Folio</p>
+                        <p class="text-size-3 text-base">
                             Folio is a startup which connects students and freelancers with venture-backed startups. I
                             contributed to many aspects of the platform, including its robust AI-powered search engines,
                             its notification architecture, and user migrations from the old platform. The platform is
@@ -186,8 +175,8 @@
                     <!--ConverseCart-->
                     <img class="card-img" src="./images/Converse-Cart.gif" />
                     <div class="card-text">
-                        <p class="text-size-2 text-weight-2 text-base">ConverseCart Search Engine</p>
-                        <p class="text-size-3 text-base-weak">
+                        <p class="text-size-2 text-weight-2 text-strong">ConverseCart Search Engine</p>
+                        <p class="text-size-3 text-base">
                             I worked with the startup ConverseCart to build an AI-powered search engine by leveraging
                             word embeddings, bag-of-words models, and cross encoders. It uses a 3-step approach, where
                             it first retrieves a bunch of candidate products using a vector search on the query and
@@ -201,8 +190,8 @@
                     <!--RTD-->
                     <img class="card-img" src="./images/rtd.gif" />
                     <div class="card-text">
-                        <p class="text-size-2 text-weight-2 text-base">RTD Toolkit</p>
-                        <p class="text-size-3 text-base-weak">
+                        <p class="text-size-2 text-weight-2 text-strong">RTD Toolkit</p>
+                        <p class="text-size-3 text-base">
                             RTD is a technique developed at the University of Michigan for making provably safe motion
                             plans. It accounts for uncertainties in the measurements as well as the robot movement using
                             polynomial zonotopes to avoid collisions. I worked with ROAHM lab, the team that developed
@@ -219,8 +208,8 @@
                     <!--plaite-->
                     <img class="card-img" src="./images/plaite.png" />
                     <div class="card-text">
-                        <p class="text-size-2 text-weight-2 text-base">Plaite</p>
-                        <p class="text-size-3 text-base-weak">
+                        <p class="text-size-2 text-weight-2 text-strong">Plaite</p>
+                        <p class="text-size-3 text-base">
                             Plaite is a project my team and I developed in 24 hours during MHacks 2024, and it won us
                             the Best Use of Intel AI award. Plaite is a nutrition tracking app which uses YOLOv8 for
                             real time food detection to simplify the tracking process for users. Plaite also leverages
@@ -234,8 +223,8 @@
                     <!--Mandelbrot-->
                     <img class="card-img" src="./images/Mandelbrot.gif" />
                     <div class="card-text">
-                        <p class="text-size-2 text-weight-2 text-base">Mandelbrot Fractal Explorer</p>
-                        <p class="text-size-3 text-base-weak">
+                        <p class="text-size-2 text-weight-2 text-strong">Mandelbrot Fractal Explorer</p>
+                        <p class="text-size-3 text-base">
                             This is a Mandelbrot Fractal Explorer I built in C++ & SFML. It uses thread pools to
                             calculate the pixel colors concurrently, and is able to achieve zoom levels of 10^-16 before
                             floating point precision comes into effect. It also implements a few other optimizations
@@ -245,12 +234,12 @@
                     </div>
                 </a>
 
-                <a class="card" href="" target="_blank">
+                <div class="card" href="" target="_blank">
                     <!--LC2K-->
                     <img class="card-img" src="./images/LC2K.png" />
                     <div class="card-text">
-                        <p class="text-size-2 text-weight-2 text-base">LC2K CPU Simulator</p>
-                        <p class="text-size-3 text-base-weak">
+                        <p class="text-size-2 text-weight-2 text-strong">LC2K CPU Simulator</p>
+                        <p class="text-size-3 text-base">
                             LC2K (Little Computer 2000) is a minimalistic ISA with 8 instructions, used throughout
                             UMich's EECS 370 Computer Organization class. Inspired by a YouTube video implementing a CPU
                             in Excel, I set out to to create my own single-cycle CPU implementing LC2K in Excel. It was
@@ -259,14 +248,14 @@
                             such as DOOM and Tetris, albeit at an unplayably slow framerate.
                         </p>
                     </div>
-                </a>
+                </div>
 
                 <a class="card" href="https://www.jsaumich.org/src/index.html" target="_blank">
                     <!--JSA-->
                     <img class="card-img" src="./images/JSA.png" />
                     <div class="card-text">
-                        <p class="text-size-2 text-weight-2 text-base">JSA Website</p>
-                        <p class="text-size-3 text-base-weak">
+                        <p class="text-size-2 text-weight-2 text-strong">JSA Website</p>
+                        <p class="text-size-3 text-base">
                             I overhauled the website for the Japan Student Association (JSA) @ The University of
                             Michigan, mainly by moving the website to GitHub Pages for free hosting, and by rewriting
                             some of the hard-coded page elements to pull dynamically from a JSON file so that non-CS
@@ -282,15 +271,15 @@
         <!--Footer-->
         <section class="footer bg-primary" id="contact">
             <div class="contacts">
-                <a href="mailto:rmeguro@umich.edu"><i class="fa-solid fa-square-envelope text-base"></i></a>
+                <a href="mailto:rmeguro@umich.edu"><i class="fa-solid fa-square-envelope text-white"></i></a>
                 <a href="https://github.com/Orbital-Web" target="_blank"
-                    ><i class="fa-brands fa-square-github text-base"></i
+                    ><i class="fa-brands fa-square-github text-white"></i
                 ></a>
                 <a href="https://www.linkedin.com/in/rei-meguro/" target="_blank"
-                    ><i class="fa-brands fa-linkedin text-base"></i
+                    ><i class="fa-brands fa-linkedin text-white"></i
                 ></a>
             </div>
-            <p class="text-size-3 text-base-weak" id="copyright">Copyright © Rei Meguro</p>
+            <p class="text-size-3 text-white" id="copyright">Copyright © Rei Meguro</p>
         </section>
     </body>
 </html>

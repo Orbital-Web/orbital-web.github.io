@@ -1,17 +1,37 @@
 html {
     scroll-behavior: smooth;
 }
-body {
-    /* Default to dark */
-    --base: #1D232A;
-    --base-alt: #191E24;
 
+/* Default to preferred color scheme or dark */
+body {
     --primary: #7480FF;
     --secondary: #03DAC6;
+
+    --base: #1D232A;
+    --base-alt: #191E24;
 
     --elem-strong: #fff;
     --elem: #A6ADBB;
     --elem-weak: #4B5563;
+}
+@media (prefers-color-scheme: light) {
+    body {
+        --base: #fff;
+        --base-alt: #E8E8E8;
+
+        --elem-strong: #000;
+        --elem: #1F2937;
+        --elem-weak: #4B5563;
+    }
+}
+/* JavaScript toggle override */
+body[data-theme='dark'] {
+    --base: #1D232A !important;
+    --base-alt: #191E24 !important;
+
+    --elem-strong: #fff !important;
+    --elem: #A6ADBB !important;
+    --elem-weak: #4B5563 !important;
 }
 body[data-theme='light'] {
     --base: #fff !important;

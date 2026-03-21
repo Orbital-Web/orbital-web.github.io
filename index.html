@@ -1,31 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
     <head>
         <title>Rei Meguro</title>
         <link rel="stylesheet" href="index.css" />
         <script src="index.js"></script>
-        <script src="https://kit.fontawesome.com/02b877242b.js" crossorigin="anonymous"></script>
+        <script
+            src="https://kit.fontawesome.com/02b877242b.js"
+            crossorigin="anonymous"
+        ></script>
 
         <meta charset="UTF-8" />
         <meta name="author" content="Rei Meguro" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
 
-    <body onload="onLoad();">
+    <body onload="onLoad()">
         <!--Navbar-->
         <nav class="navbar bg-base">
             <!--Light/Dark toggle-->
-            <a id="mode-toggle" class="text-size-3 text-strong toggle"><i class="fa-solid"></i></a>
+            <a id="mode-toggle" class="text-size-3 text-strong toggle"
+                ><i class="fa-solid"></i
+            ></a>
             <!--Mobile only burger-->
             <input type="checkbox" id="burger" class="burger text-size-2" />
-            <label for="burger" class="burger"><i class="fa-solid fa-bars text-size-2 text-strong"></i></label>
+            <label for="burger" class="burger"
+                ><i class="fa-solid fa-bars text-size-2 text-strong"></i
+            ></label>
             <!--Navigation links-->
             <div class="break"></div>
             <div class="navs bg-base">
-                <a href="#home" class="text-size-3 text-strong text-weight-3">Home</a>
-                <a href="#about" class="text-size-3 text-strong text-weight-3">About</a>
-                <a href="#projects" class="text-size-3 text-strong text-weight-3">Projects</a>
-                <a href="#contact" class="text-size-3 text-strong text-weight-3">Contact</a>
+                <a href="#home" class="text-size-3 text-strong text-weight-3"
+                    >Home</a
+                >
+                <a
+                    href="#projects"
+                    class="text-size-3 text-strong text-weight-3"
+                    >Projects</a
+                >
+                <a href="#contact" class="text-size-3 text-strong text-weight-3"
+                    >Contacts</a
+                >
             </div>
         </nav>
 
@@ -33,7 +47,7 @@
         <section class="top" id="home">
             <p class="text-size-1 text-weight-1 text-strong">Rei Meguro</p>
             <p class="text-size-2 text-base">
-                I work with Full Stack, Computer Vision, and Natural Language Processing.
+                I enjoy the art of over-engineering complex, fast things
             </p>
             <img class="prof-img" src="./images/profile.jpg" />
         </section>
@@ -42,120 +56,121 @@
         <section class="desc bg-primary" id="about">
             <!--Description Box-->
             <div class="desc-box">
-                <p class="fadein text-size-2 text-weight-2 text-white">About Me</p>
-                <p class="fadein text-size-3 text-white">
-                    I'm an ambitious Computer Science student with a passion in automation and designing robust,
-                    efficient systems. I enjoy working with all sorts of AI (ML, CV, NLP, RL), and I aspire to automate
-                    all mundane daily tasks so we can focus on solving the important problems.
+                <p class="fadein text-size-2 text-weight-2 text-white">
+                    About Me
                 </p>
-            </div>
-        </section>
-
-        <!--Overview-->
-        <section class="overview">
-            <!--Overview Box-->
-            <div class="overview-box bg-base">
-                <!--Education-->
-                <div class="overview-section">
-                    <i class="fa-solid fa-graduation-cap icon text-black"></i>
-                    <p class="fadein text-size-2 text-weight-2 text-strong">Education</p>
-
-                    <p class="fadein text-size-3 text-base">Cornell University</p>
-                    <p class="fadein text-size-3 text-base">M.E in Computer Science</p>
-                    <p class="fadein text-size-3 text-base">Aug 2025 - Mar 2026</p>
-                    <br />
-
-                    <p class="fadein text-size-3 text-base">University of Michigan</p>
-                    <p class="fadein text-size-3 text-base">B.S.E in Computer Science</p>
-                    <p class="fadein text-size-3 text-base">Aug 2022 - Mar 2025, GPA: 4.0</p>
-                </div>
-                <!--Technical Skills-->
-                <div class="overview-section">
-                    <i class="fa-solid fa-code icon text-black"></i>
-                    <p class="fadein text-size-2 text-weight-2 text-strong">Technical Skills</p>
-
-                    <p class="fadein text-size-3 text-base">C, C++, Python, JavaScript</p>
-                    <p class="fadein text-size-3 text-base">MATLAB, Julia, HTML/CSS</p>
-                    <br />
-
-                    <p class="fadein text-size-3 text-base">Git, Docker, React, Next.js, Django, Flask</p>
-                    <p class="fadein text-size-3 text-base">FastAPI, PyTorch TensorFlow, SFML</p>
-                    <br />
-
-                    <a
-                        class="fadein text-size-3 text-primary"
-                        href="https://drive.google.com/file/d/1p47pE7m2erPPB6gB4FLqeXYVdaX50MSI/view?usp=sharing"
-                        target="_blank"
-                        >View Resume</a
-                    >
-                </div>
-                <!--Experiences-->
-                <div class="overview-section">
-                    <i class="fa-solid fa-award icon text-black"></i>
-                    <p class="fadein text-size-2 text-weight-2 text-strong">Awards</p>
-
-                    <p class="fadein text-size-3 text-base">4th IEEE ICAIC Conference: Best Paper</p>
-                    <p class="fadein text-size-3 text-base">Mapping Thought to Action: 1st Place</p>
-                    <p class="fadein text-size-3 text-base">MHacks 2024: Best Use of Intel AI</p>
-                    <p class="fadein text-size-3 text-base">James B. Angell Scholar</p>
-                    <p class="fadein text-size-3 text-base">Branstrom Freshman Prize</p>
-                </div>
+                <p class="fadein text-size-3 text-white">
+                    I'm an ambitious Computer Science student who loves to
+                    automate things. I work closely with all kinds of AI (ML,
+                    CV, NLP), as well as full-stack. I am also the author of
+                    Japan' strongest chess engine, Raphael.
+                </p>
             </div>
         </section>
 
         <!--Projects-->
         <section class="projects" id="projects">
-            <p class="fadein text-size-2 text-weight-2 text-strong">My Recent Projects</p>
-            <p class="fadein text-size-3 text-base">Click on the cards to visit project links</p>
+            <p class="fadein text-size-2 text-weight-2 text-strong">
+                My Recent Projects
+            </p>
+            <p class="fadein text-size-3 text-base">
+                Click on the cards to visit project links
+            </p>
 
             <!--Project Cards-->
             <div class="cards">
-                <!--AdaPhish-->
-                <a class="card" href="https://github.com/Orbital-Web/PhishBowl" target="_blank">
-                    <img class="card-img" src="./images/UNU.gif" />
+                <!--Raphael-->
+                <a
+                    class="card"
+                    href="https://github.com/Orbital-Web/Raphael"
+                    target="_blank"
+                >
+                    <img class="card-img" src="./images/Raphael.gif" />
                     <div class="card-text">
-                        <p class="text-size-2 text-weight-2 text-strong">AdaPhish</p>
+                        <p class="text-size-2 text-weight-2 text-strong">
+                            Raphael
+                        </p>
                         <p class="text-size-3 text-base">
-                            AdaPhish is an adaptive phishing detection and submission platform designed to enable secure
-                            sharing of phishing emails and provide a robust solution to evolving phishing scams. It uses
-                            a combination of LLMs and a RAG-like approach to continuously improve and identify new
-                            phishing threats. The app is built using Docker, FastAPI, Next.js, and Nginx, making it
-                            easily deployable by any organization. The design and experiments done with AdaPhish is
-                            published as the paper
-                            <i>AdaPhish: AI-Powered Adaptive Defense and Education Resource Against Deceptive Emails </i
-                            >, and it has even won the Best Paper Award at the 4th IEEE ICAIC Conference.
+                            Raphael is a chess engine I wrote in C++ and it is
+                            currently the strongest chess engine in Japan.
+                            <br /><br />
+                            It uses alpha-beta search with various enhancements,
+                            and a quantized neural network running on the CPU
+                            using SIMD intrinsics, trained on tens of millions
+                            of self-play games.
                         </p>
                     </div>
                 </a>
 
-                <!--Raphael-->
-                <a class="card" href="https://github.com/Orbital-Web/Raphael" target="_blank">
-                    <img class="card-img" src="./images/Raphael.gif" />
+                <!--Onyx-->
+                <a
+                    class="card"
+                    href="https://github.com/onyx-dot-app/onyx"
+                    target="_blank"
+                >
+                    <img class="card-img" src="./images/Onyx.gif" />
                     <div class="card-text">
-                        <p class="text-size-2 text-weight-2 text-strong">Raphael</p>
+                        <p class="text-size-2 text-weight-2 text-strong">
+                            Onyx
+                        </p>
                         <p class="text-size-3 text-base">
-                            Raphael is a chess engine I made in C++, and it is accompanied with a GUI built with SFML.
-                            It is capable of easily beating most players and even some publicly available chess engines.
-                            It uses the recursive negamax function to rapidly explore outcomes of different moves, and
-                            it leverages several optimizations incuding transposition tables, iterative deepening, SEE
-                            pruning, and pondering. It also has a NNUE mode to evaluate using a neural network, though I
-                            am currently in the process of training it using data from my own evaluation function rather
-                            than Stockfish's.
+                            Onyx is an open source AI platform which
+                            automatically ingests documents from connected
+                            sources and leverages deep research agents to answer
+                            questions or complete complex tasks.
+                            <br /><br />
+                            At Onyx, I helped develop the deep research agent
+                            and the knowledge graph indexing & inference
+                            pipeline, eliminating OOMs, improving
+                            fault-tolerance, and tripling indexing speeds.
+                        </p>
+                    </div>
+                </a>
+
+                <!--AdaPhish-->
+                <a
+                    class="card"
+                    href="https://github.com/Orbital-Web/PhishBowl"
+                    target="_blank"
+                >
+                    <img class="card-img" src="./images/UNU.gif" />
+                    <div class="card-text">
+                        <p class="text-size-2 text-weight-2 text-strong">
+                            AdaPhish
+                        </p>
+                        <p class="text-size-3 text-base">
+                            AdaPhish is an adaptive phishing detection and
+                            submission platform which learns attack patterns
+                            over time using a vector store and RAG, built using
+                            Docker, FastAPI, Next.js, and Nginx.
+                            <br /><br />
+                            It was published in the 4th IEEE ICAIC Conference
+                            and won the Best Paper Award.
                         </p>
                     </div>
                 </a>
 
                 <!--Kineval-->
-                <a class="card" href="https://github.com/Orbital-Web/autorob" target="_blank">
+                <a
+                    class="card"
+                    href="https://github.com/Orbital-Web/autorob"
+                    target="_blank"
+                >
                     <img class="card-img" src="./images/Kineval.gif" />
                     <div class="card-text">
-                        <p class="text-size-2 text-weight-2 text-strong">Kineval</p>
+                        <p class="text-size-2 text-weight-2 text-strong">
+                            Kineval
+                        </p>
                         <p class="text-size-3 text-base">
-                            Kineval is a Python-based interactive learning tool made for EECS 367 at the University of
-                            Michigan and it includes a wide variety of features including URDF loading, forward
-                            kinematics, inverse kinematics, collision detection, and RRT motion planning. It's written
-                            in a manner to allow students to implement these features themselves while only focusing on
-                            the key details (i.e., not the rendering, keyboard control, etc.).
+                            Kineval is a Python-based interactive learning tool
+                            for learning FK, IK, collision detection, and RRT
+                            motion planning.
+                            <br /><br />
+                            It was developed to be used for EECS 367 at the
+                            University of Michigan, and it's written in a manner
+                            that allows students to implement these features on
+                            their own without worrying about other aspects such
+                            as rendering.
                         </p>
                     </div>
                 </a>
@@ -164,12 +179,17 @@
                 <a class="card" href="https://www.folio.works" target="_blank">
                     <img class="card-img" src="./images/Folio.png" />
                     <div class="card-text">
-                        <p class="text-size-2 text-weight-2 text-strong">Folio</p>
+                        <p class="text-size-2 text-weight-2 text-strong">
+                            Folio
+                        </p>
                         <p class="text-size-3 text-base">
-                            Folio is a startup which connects students and freelancers with venture-backed startups. I
-                            contributed to many aspects of the platform, including its robust search engine,
-                            notification system, and user data migrations from the old platform, working with Django,
-                            Next.js, Git, Docker, and a variety of other technologies.
+                            Folio is a startup which connects freelancers to
+                            venture-backed startups.
+                            <br /><br />
+                            I developed the core email notification system and
+                            helped develop data migration pipelines to
+                            transition from their old platform, working with
+                            Django, Next.js, Docker, and Git.
                         </p>
                     </div>
                 </a>
@@ -178,50 +198,68 @@
                 <a class="card" href="https://convosearch.com" target="_blank">
                     <img class="card-img" src="./images/Converse-Cart.gif" />
                     <div class="card-text">
-                        <p class="text-size-2 text-weight-2 text-strong">ConverseCart Search Engine</p>
+                        <p class="text-size-2 text-weight-2 text-strong">
+                            ConverseCart Search Engine
+                        </p>
                         <p class="text-size-3 text-base">
-                            I worked with the startup ConverseCart to build an AI-powered search engine by leveraging
-                            word embeddings, bag-of-words models, and cross encoders. It uses a retrieve and rerank
-                            approach, where it first sources a bunch of candidate products using a combination of vector
-                            search and keyword matching, then uses a custom trained cross encoder to rerank the products
-                            by relevancy. Finally, a personalization model is used to boost certain products and filter
-                            others, while relevant data is cached throughout the whole search process to speed up search
-                            with similar queries for all users in the future.
+                            Conversecart is a startup which helps retail stores
+                            greatly boost their product click through rates by
+                            providing them with a smart AI search engine.
+                            <br /><br />
+                            I helped develop the early versions of their search
+                            engine by leveraging word embeddings, bag-of-word
+                            models, and cross encoders to enable fast,
+                            personalized, natural language queries.
                         </p>
                     </div>
                 </a>
 
                 <!--RTD-->
-                <a class="card" href="https://github.com/roahmlab/rtd-code-python" target="_blank">
+                <a
+                    class="card"
+                    href="https://github.com/roahmlab/rtd-code-python"
+                    target="_blank"
+                >
                     <img class="card-img" src="./images/rtd.gif" />
                     <div class="card-text">
-                        <p class="text-size-2 text-weight-2 text-strong">RTD Toolkit</p>
+                        <p class="text-size-2 text-weight-2 text-strong">
+                            RTD Toolkit
+                        </p>
                         <p class="text-size-3 text-base">
-                            RTD is a technique developed at the University of Michigan for making provably safe motion
-                            plans. It accounts for uncertainties in the measurements as well as the robot movement using
-                            polynomial zonotopes to avoid collisions. I worked with ROAHM lab, the team that developed
-                            this technique, to built a Python toolkit for easily implementing RTD on any grounded robot,
-                            recreating all of the functionality in the original implementation, and introducing
-                            additional features such as a URDF loader.
+                            RTD, developed at the University of Michigan, allows
+                            provably safe motion planning accounting for
+                            uncertainties in measurements using polynomial
+                            zonotopes.
+                            <br /><br />
+                            I worked with the ROAHM Lab to port their
+                            implemention of RTD from MATLAB into a generalizable
+                            library in Python so that anybody could implement
+                            RTD, whilst also introducing performance
+                            optimizations.
                         </p>
                     </div>
                 </a>
 
-                <!--TODO: OwlViT -->
                 <!--TODO: OS projects -->
-                <!--TODO: FaceRec -->
 
                 <!--Mandelbrot-->
-                <a class="card" href="https://github.com/Orbital-Web/MandelbrotExplorer" target="_blank">
+                <a
+                    class="card"
+                    href="https://github.com/Orbital-Web/MandelbrotExplorer"
+                    target="_blank"
+                >
                     <img class="card-img" src="./images/Mandelbrot.gif" />
                     <div class="card-text">
-                        <p class="text-size-2 text-weight-2 text-strong">Mandelbrot Fractal Explorer</p>
+                        <p class="text-size-2 text-weight-2 text-strong">
+                            Mandelbrot Fractal Explorer
+                        </p>
                         <p class="text-size-3 text-base">
-                            This is a Mandelbrot Fractal Explorer I built in C++ & SFML. It uses thread pools to
-                            calculate the pixel colors concurrently, and is able to achieve zoom levels of 10^-16 before
-                            floating point precision comes into effect. It also implements a few other optimizations
-                            such as cardoid and periodicity checking to skip known regions that are in the Mandelbrot
-                            set.
+                            This is am interactive Mandelbrot Fractal Explorer I
+                            wrote in C++ using SFML.
+                            <br /><br />
+                            It uses threadpools to exploit the embarrassingly
+                            parallel nature of the problem, allowing 1080p
+                            renders and zooms of up to 10^-16.
                         </p>
                     </div>
                 </a>
@@ -230,12 +268,14 @@
                 <div class="card" href="" target="_blank">
                     <img class="card-img" src="./images/sudoku.gif" />
                     <div class="card-text">
-                        <p class="text-size-2 text-weight-2 text-strong">Sudoku Solver</p>
+                        <p class="text-size-2 text-weight-2 text-strong">
+                            Sudoku Solver
+                        </p>
                         <p class="text-size-3 text-base">
-                            In this project, I combined a backtracking Sudoku solver with pyautogui and a CNN digit
-                            recognition model to automatically take a screenshot of the game, identify the given digits,
-                            and enter the solution once it finds one. Although each component is fairly simple, it was
-                            the first time I combined multiple tools to create an interactive game solver.
+                            This is a simple Sudoku Solver using a backtracking
+                            algorithm for the solver, a CNN for the digit
+                            recognition, and pyautogui for the automatic number
+                            entry.
                         </p>
                     </div>
                 </div>
@@ -244,14 +284,18 @@
                 <div class="card" href="" target="_blank">
                     <img class="card-img" src="./images/connect4.gif" />
                     <div class="card-text">
-                        <p class="text-size-2 text-weight-2 text-strong">Nerd Wrecker: Connect 4</p>
+                        <p class="text-size-2 text-weight-2 text-strong">
+                            Nerd Wrecker: Connect 4
+                        </p>
                         <p class="text-size-3 text-base">
-                            This project is my favorite out of the Nerd Wrecker series - a series of projects where I
-                            build a fully automatic AI to beat players in various online turn-based games on
-                            papergames.io. It uses the minimax algorithm along with a pyautogui based system to fully
-                            automatically beat other players in Connect 4. In the gif, the bot is playing as black, and
-                            it easily defeats the other player. In fact, the bot was so good that it got banned after a
-                            few minutes of play with several users.
+                            This project is a fully automatic, multiplayer
+                            Connect 4 player.
+                            <br /><br />
+                            It uses the alpha-beta algorithm paired with
+                            bitboards to efficiently find the optimal moves from
+                            the current position. It also leverages pyautogui to
+                            read the game states and enter commands into the
+                            GUI.
                         </p>
                     </div>
                 </div>
@@ -260,44 +304,40 @@
                 <div class="card" href="" target="_blank">
                     <img class="card-img" src="./images/LC2K.png" />
                     <div class="card-text">
-                        <p class="text-size-2 text-weight-2 text-strong">LC2K CPU Simulator</p>
+                        <p class="text-size-2 text-weight-2 text-strong">
+                            LC2K CPU Simulator
+                        </p>
                         <p class="text-size-3 text-base">
-                            LC2K (Little Computer 2000) is a minimalistic ISA with 8 instructions, used throughout
-                            UMich's EECS 370 Computer Organization class. Inspired by a YouTube video implementing a CPU
-                            in Excel, I set out to to create my own single-cycle CPU implementing LC2K in Excel. It was
-                            a nice and fun extension to what I've learnt in class, and I've even added my own feature by
-                            creating a memory-mapped display with 4-bit colors, allowing it to technically run games
-                            such as DOOM and Tetris, albeit at an unplayably slow framerate.
+                            LC2K (Little Computer 2000) is a minimalistic ISA
+                            with 8 instructions, used throughout UMich's EECS
+                            370 Computer Organization class.
+                            <br /><br />
+                            This project implements LC2K along with a
+                            memory-mapped display within Excel, using
+                            self-referencing cells to simulate the clock,
+                            registers, and memories.
                         </p>
                     </div>
                 </div>
 
                 <!--plaite-->
-                <a class="card" href="https://devpost.com/software/plaite" target="_blank">
+                <a
+                    class="card"
+                    href="https://devpost.com/software/plaite"
+                    target="_blank"
+                >
                     <img class="card-img" src="./images/plaite.png" />
                     <div class="card-text">
-                        <p class="text-size-2 text-weight-2 text-strong">Plaite</p>
-                        <p class="text-size-3 text-base">
-                            Plaite is a nutrition tracking app which uses YOLOv8 for real time food detection to
-                            simplify the nutrition tracking process for users, and it was built in 24 hours during the
-                            MHacks 2024 Hackathon. It also leverages LLMs to integrate a custom chatbot that can offer
-                            recipe and nutritional advice given the data and nutrition trends it receives. Plaite was a
-                            great success, winning us the Best Use of Intel AI Award.
+                        <p class="text-size-2 text-weight-2 text-strong">
+                            Plaite
                         </p>
-                    </div>
-                </a>
-
-                <!--JSA-->
-                <a class="card" href="https://www.jsaumich.org/src/index.html" target="_blank">
-                    <img class="card-img" src="./images/JSA.png" />
-                    <div class="card-text">
-                        <p class="text-size-2 text-weight-2 text-strong">JSA Website</p>
                         <p class="text-size-3 text-base">
-                            This website is the home page for the Japan Student Association (JSA) at the University of
-                            Michigan. Yet, the previous version of it had a major limitation where very few people knew
-                            how to edit the website, which made it constantly outdated. I set out to improve the website
-                            by refactoring out the page content into a spreadsheet so that anyone could easily modify
-                            it, which allowed us to more easily advertise our events and share our monthly newsletters.
+                            Plaite is a nutrition tracking app which uses YOLOv8
+                            for real time food detection, developed during the
+                            24h MHacks 2024 Hackathon. It also comes with an LLM
+                            food recommendation assistant.
+                            <br /><br />
+                            The project won the Best Use of Intel AI Award.
                         </p>
                     </div>
                 </a>
@@ -307,15 +347,21 @@
         <!--Footer-->
         <section class="footer bg-primary" id="contact">
             <div class="contacts">
-                <a href="mailto:rmeguro@umich.edu"><i class="fa-solid fa-square-envelope text-white"></i></a>
+                <a href="mailto:rmeguro@umich.edu"
+                    ><i class="fa-solid fa-square-envelope text-white"></i
+                ></a>
                 <a href="https://github.com/Orbital-Web" target="_blank"
                     ><i class="fa-brands fa-square-github text-white"></i
                 ></a>
-                <a href="https://www.linkedin.com/in/rei-meguro/" target="_blank"
+                <a
+                    href="https://www.linkedin.com/in/rei-meguro/"
+                    target="_blank"
                     ><i class="fa-brands fa-linkedin text-white"></i
                 ></a>
             </div>
-            <p class="text-size-3 text-white" id="copyright">Copyright © Rei Meguro</p>
+            <p class="text-size-3 text-white" id="copyright">
+                Copyright © Rei Meguro
+            </p>
         </section>
     </body>
 </html>

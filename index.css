@@ -4,11 +4,11 @@ html {
 
 /* Default to preferred color scheme or dark */
 body {
-    --primary: #7480FF;
+    --primary: #9572E8;
     --secondary: #03DAC6;
 
-    --base: #1D232A;
-    --base-alt: #191E24;
+    --base: #0D1117;
+    --base-alt: #010409;
 
     --elem-strong: #fff;
     --elem: #A6ADBB;
@@ -17,7 +17,7 @@ body {
 @media (prefers-color-scheme: light) {
     body {
         --base: #fff;
-        --base-alt: #E8E8E8;
+        --base-alt: #F6F8FA;
 
         --elem-strong: #000;
         --elem: #1F2937;
@@ -26,8 +26,8 @@ body {
 }
 /* JavaScript toggle override */
 body[data-theme='dark'] {
-    --base: #1D232A !important;
-    --base-alt: #191E24 !important;
+    --base: #0D1117 !important;
+    --base-alt: #010409 !important;
 
     --elem-strong: #fff !important;
     --elem: #A6ADBB !important;
@@ -35,7 +35,7 @@ body[data-theme='dark'] {
 }
 body[data-theme='light'] {
     --base: #fff !important;
-    --base-alt: #E8E8E8 !important;
+    --base-alt: #F6F8FA !important;
 
     --elem-strong: #000 !important;
     --elem: #1F2937 !important;
@@ -88,8 +88,8 @@ body {
     from {opacity: 0;}
 }
 .fadein {
-    animation: fade linear both !important;
     animation-timeline: view() !important;
+    animation: fade linear both !important;
     animation-range: 0vh 10vh !important;
 }
 
@@ -235,7 +235,7 @@ section.desc {
 
 /* Description: Box */
 section.desc .desc-box {
-    padding: 5rem 0 12rem 0;
+    padding: 5rem 0 5rem 0;
     width: 45rem;
     text-align: center;
 }
@@ -251,71 +251,9 @@ section.desc .desc-box p {
 }
 
 
-/* Overview */
-section.overview {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    margin: -8rem 0 6rem 0;
-}
-
-/* Overview: Box */
-section.overview .overview-box {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-    align-items: stretch;
-    box-shadow: 0 0.2rem 1rem 0.2rem rgba(0,0,0,0.2);
-    border-radius: 2rem;
-    width: 75rem;
-}
-@media (max-aspect-ratio: 5/4) {
-    /* Mobile */
-    section.overview .overview-box {
-        grid-template-rows: repeat(3, 1fr) !important;
-        grid-template-columns: none !important;
-        width: 22rem !important;
-    }
-}
-
-/*Overview: Sections */
-section.overview .overview-box .overview-section {
-    border-right: 1px solid var(--elem-weak);
-    padding: 2rem 1rem 3rem 1rem;
-    text-align: center;
-}
-@media (max-aspect-ratio: 5/4) {
-    /* Mobile */
-    section.overview .overview-box .overview-section {
-        border-right: none !important;
-        border-bottom: 1px solid var(--elem-weak);
-    }
-}
-section.overview .overview-box .overview-section:last-of-type {
-    border: none !important;
-}
-section.overview .overview-box .overview-section .icon {
-    margin-top: 1rem;
-    border-radius: 50%;
-    background-color: var(--secondary);
-    padding: 1rem;
-    width: 3rem;
-    height: 3rem;
-    line-height: 3rem;
-    text-align: center;
-}
-section.overview .overview-box .overview-section .text-strong {
-    margin: 2rem 0;
-}
-section.overview .overview-box .overview-section *:not(.text-strong) {
-    margin: 0rem 0;
-}
-
-
 /* Projects */
 section.projects {
-    margin-bottom: 5rem;
+    margin: 5rem 0 5rem 0;
     text-align: center;
 }
 section.projects p {
@@ -336,6 +274,8 @@ section.projects .cards {
 section.projects .cards .card {
     display: grid;
     grid-template-columns: 40% 60%;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
+    border: 1px solid #3D444D;
     border-radius: 0.5rem;
     background-color: var(--base-alt);
     width: 70rem;
@@ -351,8 +291,8 @@ section.projects .cards a.card:hover {
     30%, 70% {scale: 1.05;}
 }
 section.projects .cards .card {
-    animation: scale linear both;
     animation-timeline: view();
+    animation: scale linear both;
     animation-range: 30vh 100vh;
 }
 section.projects .cards .card img.card-img {

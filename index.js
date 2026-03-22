@@ -2,7 +2,7 @@ function updateCopyright() {
   // Set the copyright to the current year
   let cr = document.getElementById("copyright");
   let year = new Date().getFullYear();
-  cr.innerHTML = "©" + year + " Rei Meguro";
+  cr.innerHTML = "© " + year + " Rei Meguro";
 }
 
 function initializeThemeToggle() {

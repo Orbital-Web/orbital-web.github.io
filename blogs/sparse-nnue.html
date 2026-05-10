@@ -122,7 +122,7 @@ inline uint32_t nonzero_mask(__m256i reg) {
                     register contributes indices 0, 3, 6, and 7, while the second contributes 8, 11, 14, and 15.
                     <br /><br />
 
-                    We can further optimize this by using SSSE2 intrinsics to compute and store all the indices at once.
+                    We can further optimize this by using SSE2 intrinsics to compute and store all the indices at once.
                     The following code shows how we can precompute the nonzero indices and use that to track the nonzero
                     blocks from a stream of inputs. Note that this code comes from Raphael but is originally based on
                     the sparse affine implementation of

@@ -221,13 +221,13 @@ def permute_sparsity(net: dict[str, np.ndarray]) -> dict[str, np.ndarray]:
                     Since then, I've tried more sophisticated methods such as tracking co-activations to greedily form
                     groups and doing 2-opt to further reduce my nnz, but it did not result in any measurable elo gains.
                     There are many ways to approach this problem, and perhaps you can find something that works better
-                    these methods!
+                    than these methods!
 
                     <p class="text-size-3 text-weight-3 text-strong">Training with Regularization:</p>
                     Lastly, we can train our networks with a small regularization loss on our activations to further
                     decrease our nnz. I just yoinked what other people use for their regularization loss and got up to a
                     12% speed improvement over the dense affine and a 13.04 elo gain at VSTC. The average nnz blocks was
-                    27.73%, and my failed permutation improvements got it down to 25.78%.
+                    27.73%, and my failed 2-opt permutation improvements got it down to 25.78%.
                 </div>
             </div>
         </section>

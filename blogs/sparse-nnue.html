@@ -174,10 +174,10 @@ public:
 
             const auto idxs = _mm_add_epi16(
                 offset_,
-                _mm_load_si128(static_cast&lt;const __m128i*&gt;(&nonzero_idx[mask]))
+                _mm_load_si128(reinterpret_cast&lt;const __m128i*&gt;(&nonzero_idx[mask]))
             );
 
-            _mm_storeu_si128(static_cast&lt;__m128i*&gt;(&indices_[count_]), idxs);
+            _mm_storeu_si128(reinterpret_cast&lt;__m128i*&gt;(&indices_[count_]), idxs);
             offset_ = _mm_add_epi16(offset_, _mm_set1_epi16(8));
             count_ += std::popcount(mask);
         }

@@ -1,0 +1,254 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Rei Meguro</title>
+        <link rel="stylesheet" href="../index.css" />
+        <link rel="stylesheet" href="../highlight/monokai.min.css" />
+        <link rel="stylesheet" href="../highlight/highlight-copy.min.css" />
+        <script src="../js/index.js"></script>
+        <script src="https://kit.fontawesome.com/02b877242b.js" crossorigin="anonymous"></script>
+        <script src="../highlight/highlight.min.js"></script>
+        <script src="../highlight/highlight-copy.min.js"></script>
+
+        <meta charset="UTF-8" />
+        <meta name="author" content="Rei Meguro" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+
+    <body onload="onLoad()">
+        <!--Navbar-->
+        <nav class="navbar bg-base">
+            <!--Light/Dark toggle-->
+            <a id="mode-toggle" class="text-size-3 text-strong toggle"><i class="fa-solid"></i></a>
+            <!--Mobile only burger-->
+            <input type="checkbox" id="burger" class="burger text-size-2" />
+            <label for="burger" class="burger"><i class="fa-solid fa-bars text-size-2 text-strong"></i></label>
+            <!--Navigation links-->
+            <div class="break"></div>
+            <div class="navs bg-base">
+                <a href="../index.html#home" class="text-size-3 text-strong text-weight-3">Home</a>
+                <a href="../index.html#blogs" class="text-size-3 text-strong text-weight-3">Blogs</a>
+                <a href="../index.html#projects" class="text-size-3 text-strong text-weight-3">Projects</a>
+                <a href="../index.html#contact" class="text-size-3 text-strong text-weight-3">Contacts</a>
+            </div>
+        </nav>
+
+        <!--Blog Content-->
+        <section class="blog">
+            <div class="header">
+                <p class="text-size-3 text-base">May 9, 2026</p>
+                <p class="text-size-1 text-weight-1 text-strong">Sparse NNUE</p>
+            </div>
+
+            <div class="content">
+                <div class="sidepanel">
+                    <div class="profile">
+                        <img src="../images/profile.jpg" />
+                        <p class="text-size-4 text-strong">Rei Meguro</p>
+                    </div>
+                    <div class="tags">
+                        <p class="text-size-4 text-base">Tags</p>
+                        <p class="text-size-4 text-secondary">PROGRAMMING CHESS</p>
+                    </div>
+                    <a href="../index.html" class="text-size-4 text-secondary">← Return to homepage</a>
+                </div>
+
+                <div class="maincontent text-size-4 text-base">
+                    This is a mini-series around the development of my chess AI,
+                    <a href="https://github.com/Orbital-Web/Raphael" class="text-secondary">Raphael</a>. If you like my
+                    blogs, feel free to support me by checking out my GitHub repo and leaving a star! <br /><br />
+
+                    The topic of today's post is on sparse affine transformations in NNUEs. It's a crucial technique for
+                    accelerating inference of multi-layer networks, and it goes surprisingly deep. It's possible to
+                    implement sparse affine in single layer networks, although it's much more effective in multi-layer
+                    networks due to the higher cost of the first layer after the feature transformer, and the lower
+                    number of nonzeros due to the pairwise product.<br /><br />
+
+                    The idea of sparse affine is simple: we identify blocks of four zeros in the feature transformer
+                    output and skip them. We do it in blocks of four zeroes as it works really well with how we perform
+                    the layer 1 matmul using
+                    <a href="https://aletheiaaaaa.github.io/posts/2025-07-14-dpbusd-explained/" class="text-secondary"
+                        >dpbusd</a
+                    >. These blocks of zeros don't contribute to the result of the matmul, thus sparse affine does not
+                    affect the output of our model, only the inference speed.<br /><br />
+
+                    <p class="text-size-3 text-weight-3 text-strong">Writing the Sparse Affine Inference:</p>
+                    There are three steps in this process: <br />
+                    1. finding the nonzero blocks <br />
+                    2. getting the index into these nonzero blocks <br />
+                    3. doing the matmul<br /><br />
+
+                    For the first step, there are some handy SIMD intrinsics we can use to vectorize this process:
+
+                    <pre><code class="language-cpp">
+// AVX512: finds 16 nonzero blocks at a time
+inline uint32_t nonzero_mask(__m512i reg) {
+    return _mm512_cmpgt_epi32_mask(reg, _mm512_setzero_si512());
+}
+
+// AVX2: finds 8 nonzero blocks at a time
+inline uint32_t nonzero_mask(__m256i reg) {
+    return _mm256_movemask_ps(
+        _mm256_castsi256_ps(_mm256_cmpgt_epi32(reg, _mm256_setzero_si256()))
+    );
+}
+                    </code></pre>
+
+                    <a
+                        href="https://cosmo.tardis.ac/files/2024-08-17-multilayer.html#sparse-matrix-multiplication"
+                        class="text-secondary"
+                        >This blog</a
+                    >
+                    shows how to implement <code>nonzero_mask</code> in other target arches such as SSSE3 and NEON, and
+                    also shows the full unrolled inference code.<br /><br />
+
+                    For the second step, we convert these masks into indices. On AVX2, a single
+                    <code>__m256i</code> register contains 32 u8 values, corresponding to 8 blocks. The result of
+                    <code>nonzero_mask</code> is a 32-bit integer whose lower 8 bits store the occupancy mask for those
+                    8 blocks. For example, if the mask is <code>0b1100_1001</code>, then blocks 0, 3, 6, and 7 are
+                    nonzero.<br /><br />
+
+                    Notice that each index can be recovered by repeatedly finding the position of the least-significant
+                    set bit. In other words, the next index is given by
+                    <code>countr_zero(mask)</code>, after which we clear that bit with <code>mask &= mask - 1</code>.
+                    Repeating this process enumerates all nonzero indices in ascending order. The total number of
+                    nonzero blocks is simply the popcount of the mask.<br /><br />
+
+                    To avoid recomputing these indices at runtime, we can precompute the index list for every possible
+                    mask byte and use the popcount to determine how many entries to read from the lookup table. We also
+                    maintain a running base offset equal to the number of nonzero blocks encountered so far. For
+                    example, if two consecutive
+                    <code>__m256i</code> registers both produce the mask <code>0b1100_1001</code>, then the first
+                    register contributes indices 0, 3, 6, and 7, while the second contributes 8, 11, 14, and 15.
+                    <br /><br />
+
+                    We can further optimize this by using SSE3 intrinsics to compute and store all the indices at once.
+                    The following code shows how we can precompute the nonzero indices and use that to track the
+                    nonzeros from a stream of inputs. Note that this code comes from Raphael but is originally based on
+                    the sparse affine implementation of
+                    <a href="https://github.com/Ciekce/Stormphrax" class="text-secondary">Stormphrax</a> (which itself
+                    might have taken inspiration from somewhere else).
+
+                    <pre><code class="language-cpp">
+class SparseIterator {
+private:
+    uint16_t indices_[L1_SIZE / 4] = {};
+    int32_t count_ = 0;
+
+    __m128i offset_ = _mm_setzero_si128();
+
+    // precompute nonzero_idx[mask][nnz_idx] = position of nonzero block
+    alignas(16) static constexpr MultiArray&lt;uint16_t, 256, 8&gt; nonzero_idx = [] {
+        MultiArray&lt;u16, 256, 8&gt; idx{};
+
+        for (int32_t i = 0; i &lt; 256; i++) {
+            int32_t nnz = 0;
+            for (u8 mask = i; mask != 0; mask &= mask - 1)
+                idx[i][nnz++] = std::countr_zero(mask);
+        }
+
+        return idx;
+    }();
+
+public:
+    // total number of nonzeros (nnz)
+    int32_t count() const { return count_; }
+
+    // index into ft output for a given nonzero
+    int32_t index(int32_t nonzero_index) const {
+        return indices_[nonzero_index];
+    }
+
+    // track nonzeros right after we activate each block of the ft output
+    void add_nonzero(__mm256i ft_out) {
+        // REGW = 256 on AVX2 or 512 on AVX512
+        constexpr int32_t regw32 = REGW / sizeof(int32_t);
+        constexpr int32_t n_mask_bytes = regw32 / 8;
+
+        uint32_t full_mask = nonzero_mask(ft_out);
+        for (int32_t i = 0; i &lt; n_mask_bytes; i++) {
+            // get offset of up to 8 nonzeros
+            const uint8_t mask = full_mask & 0xFF;
+            full_mask &gt;&gt;= 8;
+
+            const auto idxs = _mm_add_epi16(
+                offset_,
+                _mm_load_si128(static_cast&lt;const __m128i*&gt;(&nonzero_idx[mask]))
+            );
+
+            _mm_storeu_si128(static_cast&lt;__m128i*&gt;(&indices_[count_]), idxs);
+            offset_ = _mm_add_epi16(offset_, _mm_set1_epi16(8));
+            count_ += popcount(mask);
+        }
+    }
+};
+                    </code></pre>
+
+                    Note that we can further speed this up on CPUs with vbmi2 using vpcompress, the code for which you
+                    can find <a href="https://github.com/Orbital-Web/Raphael/pull/116" class="text-secondary">here</a>.
+
+                    <p class="text-size-3 text-weight-3 text-strong">Permuting for Sparse Affine:</p>
+                    The above code already got me a 4% speedup compared to the dense affine on AVX2 but we can get this
+                    up to 8% by permuting our weights so that nonzeros are more likely to be grouped together.
+                    <br /><br />
+
+                    The easiest way to do this is to track the number of activations in each of our ft output neurons
+                    and sorting in descending order of activations. I added an optional compiler flag in my Makefile to
+                    add a little bit of code to do this tracking, and permuted my ft weights, bias, and layer 1 weights
+                    in Python.
+
+                    <pre><code class="language-python">
+def permute_sparsity(net: dict[str, np.ndarray]) -> dict[str, np.ndarray]:
+    # we want to permute the l0 outputs and l1 inputs to group nonzeros
+    with open("ft_activations.json", "r") as act_file:
+        act: list[int] = json.load(act_file)
+        order = np.argsort(act)[::-1]  # [L1_SIZE // 2]
+        perm = np.concatenate([order, order + (L1_SIZE // 2)])  # [L1_SIZE]
+
+    l0w = net["l0w"]  # [NUM_INPUT_BUCKETS, 12, 64, L1_SIZE]
+    l0b = net["l0b"]  # [L1_SIZE]
+    l1w = net["l1w"]  # [NUM_OUTPUT_BUCKETS][L2_SIZE][L1_SIZE]
+
+    net["l0w"] = l0w[..., perm]
+    net["l0b"] = l0b[perm]
+    net["l1w"] = l1w[..., perm]
+    return net
+                    </code></pre>
+
+                    Doing this reduced my number of nonzero blocks from 59.76% to 46.09% with no changes in my
+                    output.<br /><br />
+
+                    Since then, I've tried more sophisticated methods such as tracking co-activations to greedily form
+                    groups and doing 2-opt to further reduce my nnz, but it did not result in any measurable elo gains.
+                    There are many ways to approach this problem, and perhaps you can find something that works better
+                    these methods!
+
+                    <p class="text-size-3 text-weight-3 text-strong">Training with Regularization:</p>
+                    Lastly, we can train our networks with a small regularization loss on our activations to further
+                    decrease our nnz. I just yoinked what other people use for their regularization loss and got up to a
+                    12% speed improvement over the dense affine and a 13.04 elo gain at VSTC. The average nnz blocks was
+                    27.73%, and my failed permutation improvements got it down to 25.78%.
+                </div>
+            </div>
+        </section>
+
+        <script>
+            hljs.addPlugin(new CopyButtonPlugin({ autohide: false }));
+            hljs.highlightAll();
+        </script>
+
+        <!--Footer-->
+        <section class="footer bg-primary" id="contact">
+            <div class="contacts">
+                <a href="mailto:rmeguro@umich.edu"><i class="fa-solid fa-square-envelope text-white"></i></a>
+                <a href="https://github.com/Orbital-Web" target="_blank"
+                    ><i class="fa-brands fa-square-github text-white"></i
+                ></a>
+                <a href="https://www.linkedin.com/in/rei-meguro/" target="_blank"
+                    ><i class="fa-brands fa-linkedin text-white"></i
+                ></a>
+            </div>
+            <p class="text-size-3 text-white" id="copyright">© Rei Meguro</p>
+        </section>
+    </body>
+</html>

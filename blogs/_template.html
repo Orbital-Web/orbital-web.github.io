@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Rei Meguro</title>
+        <link rel="stylesheet" href="../index.css" />
+        <link rel="stylesheet" href="../highlight/monokai.min.css" />
+        <link rel="stylesheet" href="../highlight/highlight-copy.min.css" />
+        <script src="../js/index.js"></script>
+        <script src="https://kit.fontawesome.com/02b877242b.js" crossorigin="anonymous"></script>
+        <script src="../highlight/highlight.min.js"></script>
+        <script src="../highlight/highlight-copy.min.js"></script>
+
+        <meta charset="UTF-8" />
+        <meta name="author" content="Rei Meguro" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+
+    <body onload="onLoad()">
+        <!--Navbar-->
+        <nav class="navbar bg-base">
+            <!--Light/Dark toggle-->
+            <a id="mode-toggle" class="text-size-3 text-strong toggle"><i class="fa-solid"></i></a>
+            <!--Mobile only burger-->
+            <input type="checkbox" id="burger" class="burger text-size-2" />
+            <label for="burger" class="burger"><i class="fa-solid fa-bars text-size-2 text-strong"></i></label>
+            <!--Navigation links-->
+            <div class="break"></div>
+            <div class="navs bg-base">
+                <a href="../index.html#home" class="text-size-3 text-strong text-weight-3">Home</a>
+                <a href="../index.html#blogs" class="text-size-3 text-strong text-weight-3">Blogs</a>
+                <a href="../index.html#projects" class="text-size-3 text-strong text-weight-3">Projects</a>
+                <a href="../index.html#contact" class="text-size-3 text-strong text-weight-3">Contacts</a>
+            </div>
+        </nav>
+
+        <!--Blog Content-->
+        <section class="blog">
+            <div class="header">
+                <p class="text-size-3 text-base">TODO: MMM DD, YYYY</p>
+                <p class="text-size-1 text-weight-1 text-strong">TODO: Title</p>
+            </div>
+
+            <div class="content">
+                <div class="sidepanel">
+                    <div class="profile">
+                        <img src="../images/profile.jpg" />
+                        <p class="text-size-4 text-strong">Rei Meguro</p>
+                    </div>
+                    <div class="tags">
+                        <p class="text-size-4 text-base">Tags</p>
+                        <p class="text-size-4 text-secondary">TODO: Tags</p>
+                    </div>
+                    <a href="../index.html" class="text-size-4 text-secondary">← Return to homepage</a>
+                </div>
+
+                <div class="maincontent text-size-4 text-base">TODO: content</div>
+            </div>
+        </section>
+
+        <script>
+            hljs.addPlugin(new CopyButtonPlugin({ autohide: false }));
+            hljs.highlightAll();
+        </script>
+
+        <!--Footer-->
+        <section class="footer bg-primary" id="contact">
+            <div class="contacts">
+                <a href="mailto:rmeguro@umich.edu"><i class="fa-solid fa-square-envelope text-white"></i></a>
+                <a href="https://github.com/Orbital-Web" target="_blank"
+                    ><i class="fa-brands fa-square-github text-white"></i
+                ></a>
+                <a href="https://www.linkedin.com/in/rei-meguro/" target="_blank"
+                    ><i class="fa-brands fa-linkedin text-white"></i
+                ></a>
+            </div>
+            <p class="text-size-3 text-white" id="copyright">© Rei Meguro</p>
+        </section>
+    </body>
+</html>

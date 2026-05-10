@@ -325,11 +325,11 @@ section.blogs .pagination button:disabled {
 @media (max-aspect-ratio: 5/4) {
     /* Mobile */
     section.blogs .blog-container .blog-card {
-        width: 30rem !important;
+        width: 20rem !important;
     }
 
     section.blogs .pagination {
-        width: 30rem !important;
+        width: 20rem !important;
     }
 }
 
@@ -537,14 +537,14 @@ section.blog .content .maincontent pre code {
     }
     section.blog .content .sidepanel .profile {
         border-bottom: none !important;
-        width: 35%;
+        width: 40%;
     }
     section.blog .content .sidepanel .tags {
         border-bottom: none !important;
-        width: 50%;
+        width: 40%;
     }
     section.blog .content .sidepanel a {
-        width: 15%;
+        width: 20%;
     }
 
     section.blog .content .maincontent {

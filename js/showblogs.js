@@ -10,6 +10,14 @@ function renderBlogs() {
 
   const pageBlogs = blogs.slice(start, end);
 
+  function formatDate(dateString) {
+    return new Date(dateString).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  }
+
   container.innerHTML = pageBlogs
     .map(
       (blog) => `
@@ -63,13 +71,5 @@ document.getElementById("next-btn").addEventListener("click", () => {
     renderBlogs();
   }
 });
-
-function formatDate(dateString) {
-  return new Date(dateString).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
 
 renderBlogs();

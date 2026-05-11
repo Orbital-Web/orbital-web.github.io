@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <title>Rei Meguro</title>
+        <title id="blogtitle0"></title>
         <link rel="stylesheet" href="../index.css" />
         <link rel="stylesheet" href="../highlight/monokai.min.css" />
         <link rel="stylesheet" href="../highlight/highlight-copy.min.css" />
@@ -36,8 +36,8 @@
         <!--Blog Content-->
         <section class="blog">
             <div class="header">
-                <p class="text-size-3 text-base">May 9, 2026</p>
-                <p class="text-size-1 text-weight-1 text-strong">Sparse NNUE</p>
+                <p class="text-size-3 text-base" id="blogdate"></p>
+                <p class="text-size-1 text-weight-1 text-strong" id="blogtitle1"></p>
             </div>
 
             <div class="content">
@@ -48,7 +48,7 @@
                     </div>
                     <div class="tags">
                         <p class="text-size-4 text-base">Tags</p>
-                        <p class="text-size-4 text-secondary">PROGRAMMING CHESS</p>
+                        <p class="text-size-4 text-secondary" id="blogtags"></p>
                     </div>
                     <a href="../index.html" class="text-size-4 text-secondary">← Return</a>
                 </div>
@@ -283,6 +283,7 @@ def permute_sparsity(net: dict[str, np.ndarray]) -> dict[str, np.ndarray]:
             hljs.addPlugin(new CopyButtonPlugin({ autohide: false }));
             hljs.highlightAll();
         </script>
+        <script src="blogs.js"></script>
 
         <!--Footer-->
         <section class="footer bg-primary" id="contact">
